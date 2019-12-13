@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+
 public class Strasse extends Feld {
 
     private int haus;
@@ -15,6 +17,7 @@ public class Strasse extends Feld {
     public Strasse(int serie, int strasse) {
     }
 
-    public void betrittFeld(Spielfigur spieler, Spielfigur[] nichtSpieler, Feld[] felder) {
-    }
+	public void betrittFeld(Spielfigur spieler, ArrayList<Spielfigur> nichtspieler, Feld[] felder) {
+		// TODO Auto-generated method stub
+	}
 }

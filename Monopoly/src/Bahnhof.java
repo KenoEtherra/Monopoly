@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+
 public class Bahnhof extends Feld {
 
     private Spielfigur besitzer;
@@ -11,6 +13,8 @@ public class Bahnhof extends Feld {
     public Bahnhof(int bahnhofNummer) {
     }
 
-    public void betrittFeld(Spielfigur spieler, Spielfigur[] nichtSpieler, Feld[] felder) {
-    }
+	public void betrittFeld(Spielfigur spieler, ArrayList<Spielfigur> nichtspieler, Feld[] felder) {
+		// TODO Auto-generated method stub
+		
+	}
 }
