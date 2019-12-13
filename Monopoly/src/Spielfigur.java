@@ -8,6 +8,10 @@ public class Spielfigur {
 
     private int gefaengnisFreikarte;
 
+    public Spielfigur() {
+		// TODO Auto-generated constructor stub
+	}
+    
     public int wurfeln() {
         throw new UnsupportedOperationException("Not supported yet.");
     }

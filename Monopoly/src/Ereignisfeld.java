@@ -7,6 +7,5 @@ public class Ereignisfeld extends Feld {
 
 	public void betrittFeld(Spielfigur spieler, ArrayList<Spielfigur> nichtspieler, Feld[] felder) {
 		// TODO Auto-generated method stub
-		
 	}
 }
