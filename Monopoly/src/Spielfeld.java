@@ -2,9 +2,7 @@ public class Spielfeld {
 
 	private Feld[] felder;
 
-	public static void main(String[] args) {
-		Spielfigur spieler1 = new Spielfigur();
-		System.out.println(spieler1.wuerfeln());
-		System.out.println(spieler1.getPasch());
+	public Spielfeld() {
+		// TODO Auto-generated constructor stub
 	}
 }
