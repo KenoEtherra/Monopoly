@@ -4,5 +4,6 @@ public class Main {
 		Spielfigur spieler1 = new Spielfigur();
 		System.out.println(spieler1.wuerfeln());
 		System.out.println(spieler1.getPasch());
+		System.out.print("122");
 	}
 }
