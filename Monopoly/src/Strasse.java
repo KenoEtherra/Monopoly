@@ -4,7 +4,7 @@ public class Strasse extends Feld {
 
 	private int haus;
 
-	private boolean hotel;
+	private boolean hotel; //Ein Kommentar zum Testen
 
 	private int miete;
 
