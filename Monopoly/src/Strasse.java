@@ -4,7 +4,7 @@ public class Strasse extends Feld {
 
 	private int haus;
 
-	private int hotel;
+	private boolean hotel;
 
 	private int miete;
 
