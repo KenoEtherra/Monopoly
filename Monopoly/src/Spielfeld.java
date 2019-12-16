@@ -12,7 +12,7 @@ public class Spielfeld {
 		//28 Water Werk
 		//10 Gefägnis
 		//20 Free Park
-		//30 Police
+		//30 Polizei
 		//4 Income Tax
 		//38 Super Tax
 		//2,17,33 Gemeinschaft
