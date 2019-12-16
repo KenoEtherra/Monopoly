@@ -10,7 +10,7 @@ public class Spielfeld {
 		//5,15,25,35 Bahnhof
 		//12 Elec Werk
 		//28 Water Werk
-		//10 Jail
+		//10 Gefägnis
 		//20 Free Park
 		//30 Police
 		//4 Income Tax
