@@ -3,7 +3,7 @@ import java.util.Scanner;
 
 public class Main {
 
-    static ArrayList<Spielfigur> alleSpieler = new ArrayList<Spielfigur>();
+    public static ArrayList<Spielfigur> alleSpieler = new ArrayList<Spielfigur>();
 
     public static void main(String[] args) {
         System.out.println("Willkommen bei Monopoly!");
@@ -21,6 +21,10 @@ public class Main {
         return nichtSpieler;
     }
 
+    /**
+     * Abfrage wie viele Spieler teilnehmen
+     * Erstellt alle benötigten Spieler in einer Arraylist
+     */
     private static void initializiereSpieler() {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Wie viele Spieler sollen mitspielen?");
@@ -37,5 +41,20 @@ public class Main {
             Spielfigur spieler = new Spielfigur("Spieler " + i);
             alleSpieler.add(spieler);
         }
+    }
+    /**
+     * Findet heraus wer den ersten zug machen darf
+     */
+    public static Spielfigur ersterZug() {
+        Spielfigur first = null;
+        int highestValue = 0;
+        for (Spielfigur player:alleSpieler) {
+            int cube = (int) (Math.random() * 6) + 1;
+            if (cube >= highestValue) {
+                highestValue = cube;
+                first = player;
+            }
+        }
+        return first;
     }
 }
