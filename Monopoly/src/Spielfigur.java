@@ -29,7 +29,7 @@ public class Spielfigur {
 	}
 	
 	private void setDefaultPlayer() {
-		try (InputStream input = new FileInputStream("src/config.properties")) {
+		try (InputStream input = new FileInputStream("Monopoly/src/config.properties")) {
 
             Properties prop = new Properties();
 
@@ -37,8 +37,8 @@ public class Spielfigur {
             prop.load(input);
 
             // get the property value and print it out
-            System.out.println(prop.getProperty("defaultPlayer.money"));
-            System.out.println(prop.getProperty("defaultPlayer.position"));
+            this.setGeld(Integer.parseInt(prop.getProperty("defaultPlayer.money")));
+            this.setPosition(Integer.parseInt(prop.getProperty("defaultPlayer.position")));
 
         } catch (IOException ex) {
             ex.printStackTrace();
