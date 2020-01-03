@@ -10,7 +10,9 @@ public class Bahnhof extends Feld {
 
     private int miete;
 
-    public Bahnhof(int bahnhofNummer) {
+    public Bahnhof(String name) {
+    	this.name = name;
+    	hypothek = false;
     }
 
 	public void betrittFeld(Spielfigur spieler, ArrayList<Spielfigur> nichtspieler, Feld[] felder) {
