@@ -5,6 +5,7 @@ public class Los extends Feld {
 	private int betrag = 400; // 4000 oder 400?
 
 	public Los() {
+		super();
 	}
 
 	public void betrittFeld(Spielfigur spieler, ArrayList<Spielfigur> nichtspieler, Feld[] felder, int betrag) {

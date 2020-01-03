@@ -3,9 +3,12 @@ import java.util.ArrayList;
 public class Polizist extends Feld {
 
 	public Polizist() {
+		super();
 	}
 
 	public void betrittFeld(Spielfigur spieler, ArrayList<Spielfigur> nichtspieler, Feld[] felder) {
-		// TODO Auto-generated method stub
+		System.out.println(spieler.getName + " muss ins Gefängnis!");
+		spieler.setPosition(10);
+		spieler.setAussetzen(3);
 	}
 }
