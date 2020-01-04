@@ -69,4 +69,68 @@ public class Bahnhof extends Feld {
 
 	}
 
+	public Spielfigur getBesitzer() {
+		return besitzer;
+	}
+
+	public void setBesitzer(Spielfigur besitzer) {
+		this.besitzer = besitzer;
+	}
+
+	public boolean isHypothek() {
+		return hypothek;
+	}
+
+	public void setHypothek(boolean hypothek) {
+		this.hypothek = hypothek;
+	}
+
+	public boolean isWirdBesessen() {
+		return wirdBesessen;
+	}
+
+	public void setWirdBesessen(boolean wirdBesessen) {
+		this.wirdBesessen = wirdBesessen;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public int getMiete() {
+		return miete;
+	}
+
+	public void setMiete(int miete) {
+		this.miete = miete;
+	}
+
+	public int getKaufpreis() {
+		return kaufpreis;
+	}
+
+	public void setKaufpreis(int kaufpreis) {
+		this.kaufpreis = kaufpreis;
+	}
+
+	public int getFeldNr() {
+		return feldNr;
+	}
+
+	public void setFeldNr(int feldNr) {
+		this.feldNr = feldNr;
+	}
+
+	public int getHypothekenWert() {
+		return hypothekenWert;
+	}
+
+	public void setHypothekenWert(int hypothekenWert) {
+		this.hypothekenWert = hypothekenWert;
+	}
+
 }
