@@ -1,35 +1,62 @@
 import java.util.ArrayList;
+import java.util.Scanner;
 
 public class Bahnhof extends Feld {
 
-    private Spielfigur besitzer;
+	private Spielfigur besitzer;
 
-    private boolean hypothek;
+	private boolean hypothek, wirdBesessen;
 
-    private String name;
+	private String name;
 
-    private int miete, kaufpreis, feldNr, hypothekenWert;
+	private int miete, kaufpreis, feldNr, hypothekenWert;
 
-    public Bahnhof(String name, int feldNr) {
-    	this.name = name;
-    	this.feldNr = feldNr; //Soll der Index im Felder Array sein. Braucht man das überhaupt?
-    	hypothek = false;
-    	hypothekenWert = 100;
-    	kaufpreis = 200;
-    	besitzer = null;
-    	
-    }
+	public Bahnhof(String name, int feldNr) {
+		this.name = name;
+		this.feldNr = feldNr; // Soll der Index im Felder Array sein. Braucht man das überhaupt, wenn es schon
+								// an der Stelle im Array ist?
+		hypothek = false;
+		hypothekenWert = 100;
+		kaufpreis = 200;
+		besitzer = null;
+		wirdBesessen = false;
 
+	}
+
+	/**
+	 * 
+	 * @param spieler
+	 * @param nichtspieler
+	 * @param felder
+	 */
 	public void betrittFeld(Spielfigur spieler, ArrayList<Spielfigur> nichtspieler, Feld[] felder) {
-		/*Prüfung, wer der aktive Spieler ist
-		Danach prüfen, wer ist Besitzer -> Besitzer == aktiver spieler 
-		wenn ja -> keine Miete und in switch-case mit Aktionen
-		wenn nein -> zählen wie viele Bahnhöfe der Besitzer hat und aktiven spieler bezahlen lassen*/
+		Scanner sc = new Scanner(System.in);
+		int scan = 0;
+		// Prüfung, wer der aktive Spieler ist
+		Spielfigur aktiverSpieler = spieler; // zum Beispiel
 		
-		
+		if (wirdBesessen) {
+			/*
+			 * Prüfen, wer ist Besitzer -> Besitzer == aktiver spieler 
+			 * wenn ja -> keine Miete und in switch-case mit Aktionen
+			 * wenn nein -> zählen wie viele Bahnhöfe der Besitzer hat und aktiven spieler bezahlen lassen
+			 */
+		} else {
+			System.out.println("Möchten Sie den Bahnhof kaufen[1] oder nicht kaufen[2]?");
+			scan = sc.nextInt();
+			switch (scan) {
+			case 1:
+				if(aktiverSpieler.getGeld() > kaufpreis) {
+					besitzer = aktiverSpieler;
+					wirdBesessen = true;
+					aktiverSpieler.setGeld(aktiverSpieler.getGeld() - kaufpreis);
+				} else {
+					System.out.println("Sie haben nicht genug Geld, um den Bahnhof zu kaufen.");
+				}
+				break;
+			}
+		}
+
 	}
-	public void bezahlen(Spielfigur spieler, ArrayList<Spielfeld> nichtspieler, int betrag) {
-		
-	}
-	
+
 }

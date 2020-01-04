@@ -21,7 +21,5 @@ public class Stadtwerke extends Feld {
 
 	}
 	
-	public void bezahlen(Spielfigur spieler, ArrayList<Spielfeld> nichtspieler, int betrag) {
-		
-	}
+
 }
