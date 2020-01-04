@@ -8,8 +8,8 @@ public class Los extends Feld {
 		super();
 	}
 
-	public void betrittFeld(Spielfigur spieler, ArrayList<Spielfigur> nichtspieler, Feld[] felder, int betrag) {
+	public void betrittFeld(Spielfigur spieler, ArrayList<Spielfigur> nichtspieler, Feld[] felder) {
 		System.out.println (spieler.getName() + " hat das Fel'Los' betreten und erhält 400 €");
-		Spielfigur.getGeld(Geld + betrag);
+		spieler.setGeld(spieler.getGeld() + betrag);
 	}
 }
