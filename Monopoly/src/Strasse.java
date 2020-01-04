@@ -17,78 +17,71 @@ public class Strasse extends Feld {
 		besitzer = null;
 		wirdBesessen = false;
 		hypothek = false;
-		
-		switch(farbe) {
+
+		switch (farbe) {
 		case "lila":
 			kaufpreis = 60;
 			hypothekenwert = 30;
 			break;
 		case "hellblau":
-			if(name.equals("PostStrasse")) {
+			if (name.equals("PostStrasse")) {
 				kaufpreis = 120;
 				hypothekenwert = 60;
-			}	
-			 else {
+			} else {
 				kaufpreis = 100;
 				hypothekenwert = 50;
 			}
 			break;
 		case "pink":
-			if(name.equals("Neue Strasse")) { 
+			if (name.equals("Neue Strasse")) {
 				kaufpreis = 160;
 				hypothekenwert = 80;
-			}
-			 else { 
+			} else {
 				kaufpreis = 140;
 				hypothekenwert = 70;
 			}
 			break;
 		case "orange":
-			if(name.equals("Berliner Strasse")) { 
+			if (name.equals("Berliner Strasse")) {
 				kaufpreis = 200;
 				hypothekenwert = 100;
-			}
-			 else {
+			} else {
 				kaufpreis = 180;
 				hypothekenwert = 90;
 			}
 			break;
 		case "rot":
-			if(name.equals("Opernplatz")) {
+			if (name.equals("Opernplatz")) {
 				kaufpreis = 240;
 				hypothekenwert = 120;
-			}
-			else {
+			} else {
 				kaufpreis = 220;
 				hypothekenwert = 110;
 			}
 			break;
 		case "gelb":
-			if(name.equals("GoetheStrasse")) {
+			if (name.equals("GoetheStrasse")) {
 				kaufpreis = 280;
 				hypothekenwert = 140;
-			}
-			else {
+			} else {
 				kaufpreis = 260;
 				hypothekenwert = 130;
 			}
 			break;
 		case "grün":
-			if(name.equals("BahnhofStrasse")) {
+			if (name.equals("BahnhofStrasse")) {
 				kaufpreis = 320;
 				hypothekenwert = 160;
-			}
-			else {
+			} else {
 				kaufpreis = 300;
 				hypothekenwert = 150;
 			}
 			break;
 		case "blau":
-			if(name.equals("Schlossallee")) {
+			if (name.equals("Schlossallee")) {
 				kaufpreis = 400;
 				hypothekenwert = 200;
-			}
-			else {
+			} else {
 				kaufpreis = 350;
 				hypothekenwert = 175;
 			}
@@ -97,7 +90,7 @@ public class Strasse extends Feld {
 	}
 
 	public void betrittFeld(Spielfigur spieler, ArrayList<Spielfigur> nichtspieler, Feld[] felder) {
-		
+
 	}
 
 	public int getHaus() {
@@ -146,5 +139,37 @@ public class Strasse extends Feld {
 
 	public void setName(String name) {
 		this.name = name;
+	}
+
+	public boolean isWirdBesessen() {
+		return wirdBesessen;
+	}
+
+	public void setWirdBesessen(boolean wirdBesessen) {
+		this.wirdBesessen = wirdBesessen;
+	}
+
+	public String getFarbe() {
+		return farbe;
+	}
+
+	public void setFarbe(String farbe) {
+		this.farbe = farbe;
+	}
+
+	public int getKaufpreis() {
+		return kaufpreis;
+	}
+
+	public void setKaufpreis(int kaufpreis) {
+		this.kaufpreis = kaufpreis;
+	}
+
+	public int getHypothekenwert() {
+		return hypothekenwert;
+	}
+
+	public void setHypothekenwert(int hypothekenwert) {
+		this.hypothekenwert = hypothekenwert;
 	}
 }
