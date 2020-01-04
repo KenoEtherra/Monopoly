@@ -34,25 +34,35 @@ public class Bahnhof extends Feld {
 		int scan = 0;
 		// Prüfung, wer der aktive Spieler ist
 		Spielfigur aktiverSpieler = spieler; // zum Beispiel
-		
+
 		if (wirdBesessen) {
+			if (besitzer == aktiverSpieler) {
+				
+			} else {
+				
+			}
+
 			/*
-			 * Prüfen, wer ist Besitzer -> Besitzer == aktiver spieler 
-			 * wenn ja -> keine Miete und in switch-case mit Aktionen
-			 * wenn nein -> zählen wie viele Bahnhöfe der Besitzer hat und aktiven spieler bezahlen lassen
+			 * Prüfen, wer ist Besitzer -> Besitzer == aktiver spieler wenn ja -> keine
+			 * Miete und in switch-case mit Aktionen wenn nein -> zählen wie viele Bahnhöfe
+			 * der Besitzer hat und aktiven spieler bezahlen lassen
 			 */
 		} else {
-			System.out.println("Möchten Sie den Bahnhof kaufen[1] oder nicht kaufen[2]?");
+			System.out.println("Möchten Sie den " + name + " kaufen[1] oder nicht kaufen[2]?");
 			scan = sc.nextInt();
 			switch (scan) {
 			case 1:
-				if(aktiverSpieler.getGeld() > kaufpreis) {
+				if (aktiverSpieler.getGeld() > kaufpreis) {
 					besitzer = aktiverSpieler;
 					wirdBesessen = true;
 					aktiverSpieler.setGeld(aktiverSpieler.getGeld() - kaufpreis);
+					System.out.println("Sie haben den " + name + " erfolgreich gekauft!");
 				} else {
-					System.out.println("Sie haben nicht genug Geld, um den Bahnhof zu kaufen.");
+					System.out.println("Sie haben nicht genug Geld, um den " + name + " zu kaufen.");
 				}
+				break;
+			case 2:
+				System.out.println("Sie kaufen den " + name + " nicht.");
 				break;
 			}
 		}
