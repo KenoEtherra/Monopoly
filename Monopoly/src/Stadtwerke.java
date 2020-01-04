@@ -8,9 +8,12 @@ public class Stadtwerke extends Feld {
 
 	private String name;
 
-	private int type;
+	private int type, hypothekenWert;
 
-	public Stadtwerke(int werkNummer) {
+	public Stadtwerke(int werkNummer, String name) {
+		this.name = name;
+		hypothek = false;
+		
 	}
 
 	public void betrittFeld(Spielfigur spieler, ArrayList<Spielfigur> nichtspieler, Feld[] felder) {
