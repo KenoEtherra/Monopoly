@@ -30,6 +30,7 @@ public class Ereignisfeld extends Feld {
 		case 5:
 			getEreignisfeld("ereignisfeld5");
 			spieler.setPosition(0);
+			spieler.setGeld(spieler.getGeld()+400);
 			break;
 		case 6:
 			getEreignisfeld("ereignisfeld6");
@@ -38,6 +39,7 @@ public class Ereignisfeld extends Feld {
 		case 7:
 			getEreignisfeld("ereignisfeld7");
 			spieler.setPosition(39);
+			// feld ausführen
 			break;
 		case 8:
 			getEreignisfeld("ereignisfeld8");
@@ -47,14 +49,45 @@ public class Ereignisfeld extends Feld {
 		case 9:
 			getEreignisfeld("ereignisfeld9");
 			spieler.setPosition(spieler.getPosition()-3);
+			// feld ausführen
 			break;
 		case 10:
 			getEreignisfeld("ereignisfeld10");
-			//Lasse alle deine Häuser renovieren. Zahle an die Bank für jedes Haus 50\u20AC und für jedes Hotel 200\u20AC.
+			int hotelcounter = 0;
+			int strassencounter = 0;	
+			for(int i = 0; i < felder.length; i++) {
+				if(felder[i] instanceof Strasse) {
+					Strasse straße = (Strasse) felder[i];
+					if(straße.getBesitzer() == spieler) {
+						if(straße.isHotel() == true) {
+							hotelcounter++;
+						}else {
+							strassencounter += straße.getHaus();
+						}
+					}
+				}
+			}
+			int summe = 50*strassencounter + 200*hotelcounter;
+			spieler.setGeld(spieler.getGeld()-summe);
 			break;
 		case 11:
 			getEreignisfeld("ereignisfeld11");
-			//Du wirst zu Strassenausbesserungsarbeiten herangezogen. Zahle für deine Häuser und Hotels. 80\u20AC je Haus und 230\u20AC je Hotel an die Bank.
+			int hotelcounter1 = 0;
+			int strassencounter1 = 0;
+			for(int i = 0; i < felder.length; i++) {
+				if(felder[i] instanceof Strasse) {
+					Strasse straße = (Strasse) felder[i];
+					if(straße.getBesitzer() == spieler) {
+						if(straße.isHotel() == true) {
+							hotelcounter1++;
+						}else {
+							strassencounter1 += straße.getHaus();
+						}
+					}
+				}
+			}
+			int summe1 = 80*strassencounter1 + 230*hotelcounter1;
+			spieler.setGeld(spieler.getGeld()-summe1);
 			break;
 		case 12:
 			getEreignisfeld("ereignisfeld12");
@@ -68,8 +101,6 @@ public class Ereignisfeld extends Feld {
 			getEreignisfeld("ereignisfeld14");
 			spieler.setPosition(10);
 			spieler.setAussetzten(3);
-			//Gehe ins Gefängnis. Begib dich direkt dorthin. Gehe nicht über Los und ziehe nicht 400\u20AC ein.
-
 			break;
 		case 15:
 			getEreignisfeld("ereignisfeld15");
