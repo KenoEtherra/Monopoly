@@ -17,4 +17,8 @@ public class Stadtwerke extends Feld {
 		// TODO Auto-generated method stub
 
 	}
+	
+	public void bezahlen(Spielfigur spieler, ArrayList<Spielfeld> nichtspieler, int betrag) {
+		
+	}
 }
