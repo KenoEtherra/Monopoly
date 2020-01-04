@@ -7,8 +7,8 @@ public class Polizist extends Feld {
 	}
 
 	public void betrittFeld(Spielfigur spieler, ArrayList<Spielfigur> nichtspieler, Feld[] felder) {
-		System.out.println(spieler.getName + " muss ins Gefängnis!");
+		System.out.println(spieler.getName() + " muss ins Gefängnis!");
 		spieler.setPosition(10);
-		spieler.setAussetzen(3);
+		spieler.setAussetzten(3);
 	}
 }

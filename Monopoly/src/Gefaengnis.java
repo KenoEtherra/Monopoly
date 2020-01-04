@@ -7,7 +7,7 @@ public class Gefaengnis extends Feld {
 	}
 
 	public void betrittFeld(Spielfigur spieler, ArrayList<Spielfigur> nichtspieler, Feld[] felder) {
-		System.out.println(spieler.getName + " ist zu Besuch im Gefängnis.");
+		System.out.println(spieler.getName() + " ist zu Besuch im Gefängnis.");
 
 	}
 }
