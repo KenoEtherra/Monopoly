@@ -17,11 +17,21 @@ public class Spielfigur {
 
     private boolean broken = false;
 
+    /**
+     * Erstellt einen Spieler
+     *
+     * @param name:String Name des spielers
+     */
     public Spielfigur(String name) {
         this.setName(name);
         this.setDefaultPlayer();
     }
-
+    /**
+     * Legt die Startwerte fuer die Bahnhoefe fest.
+     *
+     * @param name:String Der Name des Bahnhofs
+     * @param feldNr:int Auf welchem Feld der Bahnhof ist
+     */
     public int wuerfeln() {
         int wuerfel1 = (int) (Math.random() * 6) + 1;
         int wuerfel2 = (int) (Math.random() * 6) + 1;
