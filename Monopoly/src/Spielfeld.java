@@ -145,6 +145,7 @@ public class Spielfeld extends Main {
     }
 
     public void moveplayer(Spielfigur spieler) {
+        int gefaengniscounter = 0;
         System.out.println(spieler.getName() + " ist dran!");
         // überprüfung auf aussetzen
         if (spieler.getAussetzen() != 0) {
@@ -155,7 +156,8 @@ public class Spielfeld extends Main {
             System.out.println("Du hast gewürfelt: " + wuerfelWert);
             int pasch = spieler.getPasch();
             if (pasch != 0) {
-                System.out.println("Du hast einen Pasch!");
+                System.out.println("Du hast 1. Pasch!");
+                gefaengniscounter = 1;
             }
 
             int position = spieler.getPosition() + wuerfelWert;
@@ -166,16 +168,19 @@ public class Spielfeld extends Main {
 
             felder[position].betrittFeld(spieler, getNichtspieler(spieler), felder);
 
-            while (spieler.getPasch() > 0) {
-                if (spieler.getPasch() == 3) {
+            while (gefaengniscounter > 0) {
+                if (gefaengniscounter == 3) {
                     spieler.setPasch(0);
                     felder[30].betrittFeld(spieler, getNichtspieler(spieler), felder);
                     break;
                 }
                 wuerfelWert = spieler.wuerfeln();
+                System.out.println("Du hast gewürfelt: " + wuerfelWert);
                 pasch = spieler.getPasch();
                 if (pasch != 0) {
-                    System.out.println("Du hast den " + spieler.getPasch() + ". Pasch");
+                    System.out.println("Du hast den " + gefaengniscounter + ". Pasch");
+                } else {
+                    gefaengniscounter = 0;
                 }
                 position = spieler.getPosition() + wuerfelWert;
                 if (position >= 39) {
