@@ -29,8 +29,30 @@ public class Spielfeld extends Main {
     	Strasse neuestrasse = new Strasse(2,2,"Neue Strasse","pink");
     	Strasse müchenerstrasse = new Strasse(3,0,"Münchener Strasse","orange");
     	Strasse wienerstrasse = new Strasse(3,1,"Wiener Strasse","orange");
-    	Strasse berlinerstrasse = new Strasse(3,3,"Berliner Strasse","orange");
+    	Strasse berlinerstrasse = new Strasse(3,2,"Berliner Strasse","orange");
     	Strasse theaterstrasse = new Strasse(4,0,"Theaterstrasse","rot");
+    	Strasse museumstrasse = new Strasse(4,1,"Museumstrasse","rot");
+    	Strasse opernplatz = new Strasse(4,2,"Opernplatz","rot");
+    	Strasse lessingstrasse = new Strasse(5,0,"Lessingstrasse","gelb");
+    	Strasse schillerstrasse = new Strasse(5,1,"Schillerstrasse","gelb");
+    	Strasse goethestrasse = new Strasse(5,2,"Goethestrasse","gelb");
+    	Strasse rathausplatz = new Strasse(6,0,"Rathausplatz","grün");
+    	Strasse haupstrasse = new Strasse(6,1,"Haupstrasse","grün");
+    	Strasse bahnhofstrasse = new Strasse(6,2,"Bahnhofstrasse","grün");
+    	Strasse parkstrasse = new Strasse(7,0,"Parkstrasse","blau");
+    	Strasse schlossallee = new Strasse(7,1,"Schlossallee","blau");
+    	
+    	Bahnhof südbahnhof = new Bahnhof("Südbahnhof",5);
+    	Bahnhof westbahnhof = new Bahnhof("Westbahnhof",15);
+    	Bahnhof nordbahnhof = new Bahnhof("Nordbahnhof",25);
+    	Bahnhof ostbahnhof = new Bahnhof("Ostbahnhof",35);
+    	
+    	Stadtwerke elekwerk = new Stadtwerke(0,"Elektrizitätswerk");
+    	Stadtwerke wasswerk = new Stadtwerke(1,"Wasserwerk");
+    	
+    	Gefaengnis gefägnis = new Gefaengnis();
+    	
+    	Polizist polizist = new Polizist();
     	
     	
     	
