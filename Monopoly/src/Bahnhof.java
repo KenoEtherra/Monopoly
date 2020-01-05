@@ -66,11 +66,11 @@ public class Bahnhof extends Feld {
 			} else {
 				// Miete
 				for (int i = 5; i < 36; i += 10) {
-
+					
 				}
 			}
 		} else {
-			System.out.println("Möchten Sie den " + name + " kaufen[ja] oder nicht kaufen[nein]?");
+			System.out.println("Möchten Sie den " + name + " kaufen[ja] oder nicht kaufen[nein]? Preis = " + kaufpreis + "€.");
 			scanSTR = sc.next();
 			switch (scanSTR) {
 			case "ja":
