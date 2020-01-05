@@ -1,6 +1,7 @@
 import javax.sound.midi.MidiFileFormat;
 import java.lang.reflect.Array;
 import java.util.ArrayList;
+import java.util.Scanner;
 
 public class Spielfeld extends Main {
 
@@ -228,6 +229,10 @@ public class Spielfeld extends Main {
             }
 
             System.out.println("Der zug ist beendet!");
+
+            System.out.println("Nächster Zug? [ja]");
+            Scanner scanner = new Scanner(System.in);
+            scanner.next();
         }
     }
 

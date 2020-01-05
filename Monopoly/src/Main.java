@@ -30,27 +30,28 @@ public class Main {
         //System.out.println("Wie viele Spieler sollen mitspielen?");
         int anzahl = 4;
         /**
-        while (true) {
-            anzahl = scanner.nextInt();
-            if (anzahl > 0 && anzahl < 5) {
-                break;
-            } else {
-                System.out.println("Es können nur 1 bis 4 Spieler teilnehmen!");
-            }
-        }
+         while (true) {
+         anzahl = scanner.nextInt();
+         if (anzahl > 0 && anzahl < 5) {
+         break;
+         } else {
+         System.out.println("Es können nur 1 bis 4 Spieler teilnehmen!");
+         }
+         }
          **/
         for (int i = 1; i <= anzahl; i++) {
             Spielfigur spieler = new Spielfigur("Spieler " + i);
             alleSpieler.add(spieler);
         }
     }
+
     /**
      * Findet heraus wer den ersten zug machen darf
      */
     public static Spielfigur ersterZug() {
         Spielfigur first = null;
         int highestValue = 0;
-        for (Spielfigur player:alleSpieler) {
+        for (Spielfigur player : alleSpieler) {
             int cube = (int) (Math.random() * 6) + 1;
             if (cube >= highestValue) {
                 highestValue = cube;
