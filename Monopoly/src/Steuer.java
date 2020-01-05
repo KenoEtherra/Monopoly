@@ -5,7 +5,7 @@ public class Steuer extends Feld {
 	private int betrag1 = 200;
 	private int betrag2 = 100;
 
-	public Steuer(int artNummer) {
+	public Steuer() {
 		super();
 	}
 
