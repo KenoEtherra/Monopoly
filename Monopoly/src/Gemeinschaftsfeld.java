@@ -16,10 +16,7 @@ public class Gemeinschaftsfeld extends Feld {
 		switch((int)(Math.random()*16+1)) {
 		case 1:
 			getGemeinschaftsfeld("gemeinschaftsfeld1");
-			for(int i = 0; i < nichtspieler.size(); i++) {
-				nichtspieler.get(i).setGeld(nichtspieler.get(i).getGeld());
-			}
-			spieler.setGeld(spieler.getGeld()+200*(nichtspieler.size()-1));
+			spieler.setGeld(spieler.getGeld()+200*3);
 			break;
 		case 2:
 			getGemeinschaftsfeld("gemeinschaftsfeld2");
