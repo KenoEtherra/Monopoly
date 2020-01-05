@@ -164,7 +164,7 @@ public class Spielfeld extends Main {
 
             int position = spieler.getPosition() + wuerfelWert;
             if (position >= 39) {
-                position = position - 40;
+                position = position - 39;
             }
             spieler.setPosition(position);
 
@@ -187,8 +187,8 @@ public class Spielfeld extends Main {
                     gefaengniscounter = 0;
                 }
                 position = spieler.getPosition() + wuerfelWert;
-                if (position >= 39) {
-                    position = position - 40;
+                if (position > 39) {
+                    position = position - 39;
                 }
 
                 spieler.setPosition(position);
@@ -200,7 +200,7 @@ public class Spielfeld extends Main {
                 System.out.println(spieler.getName() + "ist ausgeschieden!");
                 //alleSpieler.remove(spieler);
             }
-            System.out.println("Den zug ist beendet!");
+            System.out.println("Der zug ist beendet!");
         }
     }
 
