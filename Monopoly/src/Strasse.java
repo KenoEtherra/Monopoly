@@ -122,7 +122,8 @@ public class Strasse extends Feld {
 		
 		if (wirdBesessen) {
 			if (spieler == besitzer) {
-				System.out.println("Möchten Sie ein Haus/Hotel bauen[ja] oder nicht[ja]?");
+				System.out.println("Ihnen gehört " + name + " bereits.");
+				System.out.println("Möchten Sie ein Haus/Hotel bauen[ja] oder nicht[nein]? Preis = " + hausPreis + "€.");
 				scanSTR = sc.next();
 				switch (scanSTR) {
 				case "ja":

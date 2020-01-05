@@ -62,7 +62,7 @@ public class Bahnhof extends Feld {
 		if (wirdBesessen) {
 			if (besitzer == spieler) {
 				// Kann nichts machen oder?
-				
+				System.out.println("Ihnen gehört " + name + "schon.");
 			} else {
 				// Miete
 				for (int i = 5; i < 36; i += 10) {
