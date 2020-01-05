@@ -11,7 +11,7 @@ public class Spielfigur {
 
     private int geld;
 
-    private int aussetzten;
+    private int aussetzen;
 
     private int gefaengnisFreikarte;
 
@@ -97,15 +97,15 @@ public class Spielfigur {
     /**
      * @return the aussetzten
      */
-    public int getAussetzten() {
-        return aussetzten;
+    public int getAussetzen() {
+        return aussetzen;
     }
 
     /**
-     * @param aussetzten the aussetzten to set
+     * @param aussetzen the aussetzen to set
      */
-    public void setAussetzten(int aussetzten) {
-        this.aussetzten = aussetzten;
+    public void setAussetzen(int aussetzen) {
+        this.aussetzen = aussetzen;
     }
 
     /**
