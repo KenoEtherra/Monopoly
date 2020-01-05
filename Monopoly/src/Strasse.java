@@ -176,18 +176,18 @@ public class Strasse extends Feld {
                 }
                 if (feldcounter > 1) {
 					if (this.getSerie() == 0 && this.getSerie() == 7) {
-						potenzWert = (int)Math.pow(2.0, 2.0);
+						potenzWert = (int)Math.pow(2.0, (double)this.getHaus());
 						auszahlendeMiete = auszahlendeMiete * potenzWert;
 					} else {
 						if (feldcounter == 3) {
-							potenzWert = (int)Math.pow(2.0, 2.0);
+							potenzWert = (int)Math.pow(2.0, (double)this.getHaus());
 							auszahlendeMiete = auszahlendeMiete * potenzWert;
 						}
 					}
 				}
                 if (this.getHaus() > 0) {
                 	
-                	potenzWert = (int)Math.pow(2.0, 4.0);
+                	potenzWert = (int)Math.pow(2.0, (double)this.getHaus());
                 	auszahlendeMiete = auszahlendeMiete * potenzWert;
 				}
 				if (this.isHotel()) {
