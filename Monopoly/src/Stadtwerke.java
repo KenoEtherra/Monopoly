@@ -33,24 +33,32 @@ public class Stadtwerke extends Feld {
 				// Kann nichts machen oder?
 				System.out.println("Ihnen gehört das" + name + " schon.");
 			} else {
+				int miete = 0;
 				int wuerfelWert = spieler.wuerfeln();
 				System.out.println("Es wird der Mietwert gewürfelt: " + wuerfelWert);
-				int miete = 0;
-				switch (werkNummer) {
-				case 0:
+				int gesamterBesitz = 0;
+				Stadtwerke stadtwerk1 = (Stadtwerke) felder[12];
+				Stadtwerke stadtwerk2 = (Stadtwerke) felder[12];
+				if (stadtwerk1.getBesitzer() == besitzer) {
+					gesamterBesitz++;
+				} else if (stadtwerk2.getBesitzer() == besitzer) {
+					gesamterBesitz++;
+				}
+				switch (gesamterBesitz) {
+				case 1:
 					miete = wuerfelWert * 4;
-					System.out.println("Sie zahlen " + miete + "€ Miete");
+					System.out.println("Sie zahlen " + miete + "€ Miete.");
 					spieler.setGeld(spieler.getGeld() - miete);
 					break;
-				case 1:
+				case 2:
 					miete = wuerfelWert * 10;
-					System.out.println("Sie zahlen " + miete + "€ Miete");
+					System.out.println("Sie zahlen " + miete + "€ Miete.");
 					spieler.setGeld(spieler.getGeld() - miete);
 					break;
 				default:
 					break;
 				}
-
+				
 			}
 		} else {
 			System.out.println("Möchten Sie das " + name + " kaufen[ja] oder nicht kaufen[nein]?");

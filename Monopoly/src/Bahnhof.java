@@ -58,15 +58,46 @@ public class Bahnhof extends Feld {
 		Scanner sc = new Scanner(System.in);
 		int scanINT = 0;
 		String scanSTR = "";
-
+		
 		if (wirdBesessen) {
 			if (besitzer == spieler) {
 				// Kann nichts machen oder?
 				System.out.println("Ihnen gehört " + name + "schon.");
 			} else {
 				// Miete
+				int gesamterBesitz = 1;
 				for (int i = 5; i < 36; i += 10) {
+					Bahnhof aktuellerBahnhof = (Bahnhof) felder[i];
 					
+					if (aktuellerBahnhof.getFeldNr() == spieler.getPosition()) {
+						continue;
+					} else if(aktuellerBahnhof.getBesitzer() == besitzer){
+						gesamterBesitz++;
+					}
+				}
+				switch (gesamterBesitz) {
+				case 1:
+					miete = 25;
+					System.out.println("Sie zahlen " + miete + "€ Miete.");
+					spieler.setGeld(spieler.getGeld() - miete);
+					break;
+				case 2:
+					miete = 50;
+					System.out.println("Sie zahlen " + miete + "€ Miete.");
+					spieler.setGeld(spieler.getGeld() - miete);
+					break;
+				case 3:
+					miete = 100;
+					System.out.println("Sie zahlen " + miete + "€ Miete.");
+					spieler.setGeld(spieler.getGeld() - miete);
+					break;
+				case 4:
+					miete = 200;
+					System.out.println("Sie zahlen " + miete + "€ Miete.");
+					spieler.setGeld(spieler.getGeld() - miete);
+					break;
+				default:
+					break;
 				}
 			}
 		} else {
