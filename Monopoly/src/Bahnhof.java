@@ -85,7 +85,7 @@ public class Bahnhof extends Feld {
 				break;
 			}
 		}
-
+		sc.close();
 	}
 
 	public Spielfigur getBesitzer() {

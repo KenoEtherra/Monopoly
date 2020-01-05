@@ -186,6 +186,7 @@ public class Strasse extends Feld {
 				}
 			}
 		}
+		sc.close();
 	}
 
 	public int mieteKalkulieren() {

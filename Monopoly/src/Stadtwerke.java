@@ -52,6 +52,7 @@ public class Stadtwerke extends Feld {
 				break;
 			}
 		}
+		sc.close();
 	}
 	
 	public Spielfigur getBesitzer() {
