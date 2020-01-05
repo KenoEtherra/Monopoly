@@ -7,7 +7,6 @@ import java.util.Properties;
 public class Gemeinschaftsfeld extends Feld {
 	
 	public Gemeinschaftsfeld() {
-		
 	}
 	 
 	public void betrittFeld(Spielfigur spieler, ArrayList<Spielfigur> nichtspieler, Feld[] felder) {
@@ -41,45 +40,41 @@ public class Gemeinschaftsfeld extends Feld {
 			spieler.setGeld(spieler.getGeld()+400);
 			break;
 		case 7:
-			getGemeinschaftsfeld("gemeinschaftsfeld7");
-			spieler.setGefaengnisFreikarte(spieler.getGefaengnisFreikarte()+1);
-			break;
-		case 8:
 			getGemeinschaftsfeld("gemeinschaftsfeld8");
 			spieler.setGeld(spieler.getGeld()+400);
 			break;
-		case 9:
+		case 8:
 			getGemeinschaftsfeld("gemeinschaftsfeld9");
 			spieler.setGeld(spieler.getGeld()+200);
 			break;
-		case 10:
+		case 9:
 			getGemeinschaftsfeld("gemeinschaftsfeld10");
 			spieler.setGeld(spieler.getGeld()+50);
 			break;
-		case 11:
+		case 10:
 			getGemeinschaftsfeld("gemeinschaftsfeld11");
 			felder[1].betrittFeld(spieler, nichtspieler, felder);
 			spieler.setPosition(1);
 			//Gehe zurück zu Badstraße.
 			break;
-		case 12:
+		case 11:
 			getGemeinschaftsfeld("gemeinschaftsfeld12");
 			spieler.setGeld(spieler.getGeld()-200);
 			break;
-		case 13:
+		case 12:
 			getGemeinschaftsfeld("gemeinschaftsfeld13");
 			spieler.setPosition(10);
 			spieler.setAussetzen(3);
 			break;
-		case 14:
+		case 13:
 			getGemeinschaftsfeld("gemeinschaftsfeld14");
 			spieler.setGeld(spieler.getGeld()-500);
 			break;
-		case 15:
+		case 14:
 			getGemeinschaftsfeld("gemeinschaftsfeld15");
 			spieler.setGeld(spieler.getGeld()-10);
 			break;
-		case 16:
+		case 15:
 			getGemeinschaftsfeld("gemeinschaftsfeld16");
 			spieler.setGeld(spieler.getGeld()-200);
 			break;

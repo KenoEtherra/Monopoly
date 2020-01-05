@@ -13,8 +13,6 @@ public class Spielfigur {
 
     private int aussetzen;
 
-    private int gefaengnisFreikarte;
-
     private int pasch;
 
     private boolean broken = false;
@@ -115,20 +113,6 @@ public class Spielfigur {
      */
     public void setAussetzen(int aussetzen) {
         this.aussetzen = aussetzen;
-    }
-
-    /**
-     * @return the gefaengnisFreikarte
-     */
-    public int getGefaengnisFreikarte() {
-        return gefaengnisFreikarte;
-    }
-
-    /**
-     * @param gefaengnisFreikarte the gefaengnisFreikarte to set
-     */
-    public void setGefaengnisFreikarte(int gefaengnisFreikarte) {
-        this.gefaengnisFreikarte = gefaengnisFreikarte;
     }
 
     public String getName() {
