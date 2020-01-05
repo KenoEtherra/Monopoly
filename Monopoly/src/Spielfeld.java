@@ -232,10 +232,10 @@ public class Spielfeld extends Main {
             if (spieler.getGeld() <= 0) {
                 spieler.setBroken(true);
                 alleSpieler.remove(spieler);
-                System.out.println(spieler.getName() + "ist ausgeschieden!");
+                System.out.println(spieler.getName() + " ist ausgeschieden!");
             }
 
-            System.out.println("Der zug ist beendet!");
+            System.out.println("Der Zug ist beendet!");
 
             System.out.println("Nächster Zug? [ja]");
             Scanner scanner = new Scanner(System.in);
