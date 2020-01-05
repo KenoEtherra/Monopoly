@@ -120,7 +120,7 @@ public class Strasse extends Feld {
 		Spielfigur aktiverSpieler = spieler; //Temp
 		
 		if (wirdBesessen) {
-			if(aktiverSpieler == besitzer) {
+			if(spieler == besitzer) {
 				System.out.println("Möchten Sie ein Haus/Hotel bauen[1] oder nichts tun[2]?");
 				scanINT = sc.nextInt();
 				switch (scanINT) {

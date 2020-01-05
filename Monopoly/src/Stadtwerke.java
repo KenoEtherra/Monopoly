@@ -25,10 +25,9 @@ public class Stadtwerke extends Feld {
 	public void betrittFeld(Spielfigur spieler, ArrayList<Spielfigur> nichtspieler, Feld[] felder) {
 		Scanner sc = new Scanner(System.in);
 		int scan = 0;
-		Spielfigur aktiverSpieler = spieler;
-
+		
 		if (wirdBesessen) {
-			if (besitzer == aktiverSpieler) {
+			if (besitzer == spieler) {
 
 			} else {
 				// Miete
@@ -38,10 +37,10 @@ public class Stadtwerke extends Feld {
 			scan = sc.nextInt();
 			switch (scan) {
 			case 1:
-				if (aktiverSpieler.getGeld() > kaufpreis) {
-					besitzer = aktiverSpieler;
+				if (spieler.getGeld() > kaufpreis) {
+					besitzer = spieler;
 					wirdBesessen = true;
-					aktiverSpieler.setGeld(aktiverSpieler.getGeld() - kaufpreis);
+					spieler.setGeld(spieler.getGeld() - kaufpreis);
 					System.out.println("Sie haben das " + name + " erfolgreich gekauft!");
 				} else {
 					System.out.println("Sie haben nicht genug Geld, um das " + name + " zu kaufen.");

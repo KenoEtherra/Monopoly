@@ -32,14 +32,16 @@ public class Bahnhof extends Feld {
 	public void betrittFeld(Spielfigur spieler, ArrayList<Spielfigur> nichtspieler, Feld[] felder) {
 		Scanner sc = new Scanner(System.in);
 		int scan = 0;
-		// Prüfung, wer der aktive Spieler ist
-		Spielfigur aktiverSpieler = spieler; // zum Beispiel
-
+		
 		if (wirdBesessen) {
-			if (besitzer == aktiverSpieler) {
-				
+			if (besitzer == spieler) {
+				//Kann nichts machen oder?
 			} else {
-				
+				for (int i = 5; i < 36; i += 10) {
+					//Bin ich grad bei.
+						
+					
+				}
 			}
 
 			/*
@@ -52,10 +54,10 @@ public class Bahnhof extends Feld {
 			scan = sc.nextInt();
 			switch (scan) {
 			case 1:
-				if (aktiverSpieler.getGeld() > kaufpreis) {
-					besitzer = aktiverSpieler;
+				if (spieler.getGeld() > kaufpreis) {
+					besitzer = spieler;
 					wirdBesessen = true;
-					aktiverSpieler.setGeld(aktiverSpieler.getGeld() - kaufpreis);
+					spieler.setGeld(spieler.getGeld() - kaufpreis);
 					System.out.println("Sie haben den " + name + " erfolgreich gekauft!");
 				} else {
 					System.out.println("Sie haben nicht genug Geld, um den " + name + " zu kaufen.");
@@ -68,6 +70,7 @@ public class Bahnhof extends Feld {
 		}
 
 	}
+	
 
 	public Spielfigur getBesitzer() {
 		return besitzer;
