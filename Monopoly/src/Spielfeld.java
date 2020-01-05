@@ -178,6 +178,7 @@ public class Spielfeld extends Main {
                 System.out.println("Du hast gewürfelt: " + wuerfelWert);
                 pasch = spieler.getPasch();
                 if (pasch != 0) {
+                    gefaengniscounter++;
                     System.out.println("Du hast den " + gefaengniscounter + ". Pasch");
                 } else {
                     gefaengniscounter = 0;
