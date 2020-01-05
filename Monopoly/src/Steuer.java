@@ -15,12 +15,18 @@ public class Steuer extends Feld {
 		if (spieler.getPosition() == 4) {
 			spieler.setGeld (spieler.getGeld() - betrag1);
 			setSteuertopf (getSteuertopf() + betrag1);
-			System.out.println(spieler.getName() + "muss 200 € Einkommenssteuer zahlen.");
+			System.out.println(spieler.getName() + " ist auf dem Einkommenssteuerfeld und muss 200 € Einkommenssteuer zahlen.");
 		}
 		if (spieler.getPosition() == 38) {
 			spieler.setGeld (spieler.getGeld() - betrag2);
 			setSteuertopf (getSteuertopf() + betrag2);
-			System.out.println(spieler.getName() + "muss 100 € Zusatzsteuer zahlen.");
+			System.out.println(spieler.getName() + " ist auf dem Zusatzsteuerfeld und muss 100 € Zusatzsteuer zahlen.");
+		}
+		if (spieler.getPosition() == 20) {
+			spieler.setGeld(spieler.getGeld() + steuertopf);
+			System.out.println(spieler.getName()+" ist auf dem Frei Parken Feld.");
+			System.out.println("Des Wegen bekommt "+spieler.getName()+" den Inhalt des Steuertopfes,der "+steuertopf+"€ beträgt.");
+			setSteuertopf(0);
 		}
 
 	}
