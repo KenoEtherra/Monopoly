@@ -25,30 +25,30 @@ public class Stadtwerke extends Feld {
 	public void betrittFeld(Spielfigur spieler, ArrayList<Spielfigur> nichtspieler, Feld[] felder) {
 		Scanner sc = new Scanner(System.in);
 		int scan = 0;
-		Spielfigur aktiverSpieler = spieler;
-
+		
 		if (wirdBesessen) {
-			if (besitzer == aktiverSpieler) {
-
+			if (besitzer == spieler) {
+				// Kann nichts machen oder?
 			} else {
 				// Miete
+				// Brauche den Würfelwert dafür.
 			}
 		} else {
 			System.out.println("Möchten Sie das " + name + " kaufen[1] oder nicht kaufen[2]?");
 			scan = sc.nextInt();
 			switch (scan) {
 			case 1:
-				if (aktiverSpieler.getGeld() > kaufpreis) {
-					besitzer = aktiverSpieler;
+				if (spieler.getGeld() > kaufpreis) {
+					besitzer = spieler;
 					wirdBesessen = true;
-					aktiverSpieler.setGeld(aktiverSpieler.getGeld() - kaufpreis);
+					spieler.setGeld(spieler.getGeld() - kaufpreis);
 					System.out.println("Sie haben das " + name + " erfolgreich gekauft!");
 				} else {
 					System.out.println("Sie haben nicht genug Geld, um das " + name + " zu kaufen.");
 				}
 				break;
 			case 2:
-				System.out.println("Sie kaufen das " + name + " nicht.");
+				System.out.println("Sie kaufen das " + name + " nicht und Ihr Zug ist vorbei.");
 				break;
 			}
 		}

@@ -24,8 +24,8 @@ public class Steuer extends Feld {
 		}
 		if (spieler.getPosition() == 20) {
 			spieler.setGeld(spieler.getGeld() + steuertopf);
-			System.out.println(spieler.getName()+" ist auf dem Frei Parken Feld.");
-			System.out.println("Des Wegen bekommt "+spieler.getName()+" den Inhalt des Steuertopfes,der "+steuertopf+"€ beträgt.");
+			System.out.println(spieler.getName()+" ist auf dem Freiparken-Feld");
+			System.out.println("Er erhält den Inhalt des Steuertopfes in Höhe von" + steuertopf + " €.");
 			setSteuertopf(0);
 		}
 

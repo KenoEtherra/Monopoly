@@ -3,14 +3,27 @@ import java.util.Scanner;
 
 public class Bahnhof extends Feld {
 
+	/**
+	 * Der Besitzer des Bahnhofs
+	 */
 	private Spielfigur besitzer;
 
+	/**
+	 * hypothek -> ...
+	 * wirdBesessen -> 
+	 */
 	private boolean hypothek, wirdBesessen;
 
 	private String name;
 
 	private int miete, kaufpreis, feldNr, hypothekenWert;
 
+	/**
+	 * Legt die Startwerte fuer die Bahnhoefe fest.
+	 * 
+	 * @param name:String Der Name des Bahnhofs
+	 * @param feldNr:int Auf welchem Feld der Bahnhof ist
+	 */
 	public Bahnhof(String name, int feldNr) {
 		this.name = name;
 		this.feldNr = feldNr; // Soll der Index im Felder Array sein. Braucht man das überhaupt, wenn es schon
@@ -24,38 +37,44 @@ public class Bahnhof extends Feld {
 	}
 
 	/**
+	 * IN BAHNHOF 1. Pruefen, ob der Bahnhof besessen wird oder nicht. 
+	 * Wenn ja ->
+	 * Pruefen, wer ist Besitzer -> Besitzer == aktiver spieler wenn ja -> keine
+	 * Miete und in switch-case mit Aktionen wenn nein -> zaehlen wie viele Bahnhoefe
+	 * der Besitzer hat und aktiven spieler bezahlen lassen 
+	 * Wenn nein -> 
+	 * Spieler fragen, ob er den Bahnhof kaufen will oder nicht. 
+	 * Pruefen, ob genug Geld
+	 * vorhanden ist Wenn ja -> Bahnhof wird gekauft. 
+	 * Wenn nein -> Zug ist vorbei.
 	 * 
-	 * @param spieler
-	 * @param nichtspieler
-	 * @param felder
+	 * 
+	 * @param spieler:Spielfigur
+	 * @param nichtspieler:ArrayList<Spielfigur>
+	 * @param felder:Feld[]
 	 */
 	public void betrittFeld(Spielfigur spieler, ArrayList<Spielfigur> nichtspieler, Feld[] felder) {
 		Scanner sc = new Scanner(System.in);
 		int scan = 0;
-		// Prüfung, wer der aktive Spieler ist
-		Spielfigur aktiverSpieler = spieler; // zum Beispiel
 
 		if (wirdBesessen) {
-			if (besitzer == aktiverSpieler) {
-				
+			if (besitzer == spieler) {
+				// Kann nichts machen oder?
 			} else {
-				
-			}
+				// Miete
+				for (int i = 5; i < 36; i += 10) {
 
-			/*
-			 * Prüfen, wer ist Besitzer -> Besitzer == aktiver spieler wenn ja -> keine
-			 * Miete und in switch-case mit Aktionen wenn nein -> zählen wie viele Bahnhöfe
-			 * der Besitzer hat und aktiven spieler bezahlen lassen
-			 */
+				}
+			}
 		} else {
 			System.out.println("Möchten Sie den " + name + " kaufen[1] oder nicht kaufen[2]?");
 			scan = sc.nextInt();
 			switch (scan) {
 			case 1:
-				if (aktiverSpieler.getGeld() > kaufpreis) {
-					besitzer = aktiverSpieler;
+				if (spieler.getGeld() > kaufpreis) {
+					spieler.setGeld(spieler.getGeld() - kaufpreis);
+					besitzer = spieler;
 					wirdBesessen = true;
-					aktiverSpieler.setGeld(aktiverSpieler.getGeld() - kaufpreis);
 					System.out.println("Sie haben den " + name + " erfolgreich gekauft!");
 				} else {
 					System.out.println("Sie haben nicht genug Geld, um den " + name + " zu kaufen.");

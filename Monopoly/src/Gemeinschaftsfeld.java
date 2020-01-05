@@ -58,6 +58,8 @@ public class Gemeinschaftsfeld extends Feld {
 			break;
 		case 11:
 			getGemeinschaftsfeld("gemeinschaftsfeld11");
+			felder[1].betrittFeld(spieler, nichtspieler, felder);
+			spieler.setPosition(1);
 			//Gehe zurück zu Badstraße.
 			break;
 		case 12:
