@@ -27,7 +27,7 @@ public class Spielfeld extends Main {
     	Strasse seestrasse = new Strasse(2,0,"Seestrasse","pink");
     	Strasse hafenstrasse = new Strasse(2,1,"Hafenstrasse","pink");
     	Strasse neuestrasse = new Strasse(2,2,"Neue Strasse","pink");
-    	Strasse müchenerstrasse = new Strasse(3,0,"Münchener Strasse","orange");
+    	Strasse müchnerstrasse = new Strasse(3,0,"Münchner Strasse","orange");
     	Strasse wienerstrasse = new Strasse(3,1,"Wiener Strasse","orange");
     	Strasse berlinerstrasse = new Strasse(3,2,"Berliner Strasse","orange");
     	Strasse theaterstrasse = new Strasse(4,0,"Theaterstrasse","rot");
@@ -37,7 +37,7 @@ public class Spielfeld extends Main {
     	Strasse schillerstrasse = new Strasse(5,1,"Schillerstrasse","gelb");
     	Strasse goethestrasse = new Strasse(5,2,"Goethestrasse","gelb");
     	Strasse rathausplatz = new Strasse(6,0,"Rathausplatz","grün");
-    	Strasse haupstrasse = new Strasse(6,1,"Haupstrasse","grün");
+    	Strasse hauptstrasse = new Strasse(6,1,"Hauptstrasse","grün");
     	Strasse bahnhofstrasse = new Strasse(6,2,"Bahnhofstrasse","grün");
     	Strasse parkstrasse = new Strasse(7,0,"Parkstrasse","blau");
     	Strasse schlossallee = new Strasse(7,1,"Schlossallee","blau");
@@ -45,7 +45,7 @@ public class Spielfeld extends Main {
     	Bahnhof südbahnhof = new Bahnhof("Südbahnhof",5);
     	Bahnhof westbahnhof = new Bahnhof("Westbahnhof",15);
     	Bahnhof nordbahnhof = new Bahnhof("Nordbahnhof",25);
-    	Bahnhof ostbahnhof = new Bahnhof("Ostbahnhof",35);
+    	Bahnhof hauptbahnhof = new Bahnhof("Hauptbahnhof",35);
     	
     	Stadtwerke elekwerk = new Stadtwerke(0,"Elektrizitätswerk");
     	Stadtwerke wasswerk = new Stadtwerke(1,"Wasserwerk");
@@ -54,9 +54,55 @@ public class Spielfeld extends Main {
     	
     	Polizist polizist = new Polizist();
     	
+    	Steuer einksteuer = new Steuer(4);
+    	Steuer zusasteuer = new Steuer(38);
+    	
+    	Gemeinschaftsfeld gemfeld = new Gemeinschaftsfeld();
+    	
+    	Ereignisfeld ergfeld = new Ereignisfeld();
     	
     	
     	felder[0]=los;
+    	felder[1]=badstrasse;
+    	felder[2]=gemfeld;
+    	felder[3]=turmstrasse;
+    	felder[4]=einksteuer;
+    	felder[5]=südbahnhof;
+    	felder[6]=chausseestrasse;
+    	felder[7]=ergfeld;
+    	felder[8]=elisenstrasse;
+    	felder[9]=poststrasse;
+    	felder[10]=gefägnis;
+    	felder[11]=seestrasse;
+    	felder[12]=elekwerk;
+    	felder[13]=hafenstrasse;
+    	felder[14]=neuestrasse;
+    	felder[15]=westbahnhof;
+    	felder[16]=müchnerstrasse;
+    	felder[17]=gemfeld;
+    	felder[18]=wienerstrasse;
+    	felder[19]=berlinerstrasse;
+    	felder[20]=freiparken;
+    	felder[21]=theaterstrasse;
+    	felder[22]=ergfeld;
+    	felder[23]=museumstrasse;
+    	felder[24]=opernplatz;
+    	felder[25]=nordbahnhof;
+    	felder[26]=lessingstrasse;
+    	felder[27]=schillerstrasse;
+    	felder[28]=wasswerk;
+    	felder[29]=goethestrasse;
+    	felder[30]=polizist;
+    	felder[31]=rathausplatz;
+    	felder[32]=hauptstrasse;
+    	felder[33]=gemfeld;
+    	felder[34]=bahnhofstrasse;
+    	felder[35]=hauptbahnhof;
+    	felder[36]=ergfeld;
+    	felder[37]=parkstrasse;
+    	felder[38]=zusasteuer;
+    	felder[39]=schlossallee;
+    	
     }
 
     public void starteSpiel() {
