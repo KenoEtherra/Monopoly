@@ -3,15 +3,8 @@ import java.util.Scanner;
 
 public class Bahnhof extends Feld {
 
-	/**
-	 * Der Besitzer des Bahnhofs
-	 */
 	private Spielfigur besitzer;
 
-	/**
-	 * hypothek -> ...
-	 * wirdBesessen -> 
-	 */
 	private boolean hypothek, wirdBesessen;
 
 	private String name;
@@ -21,13 +14,12 @@ public class Bahnhof extends Feld {
 	/**
 	 * Legt die Startwerte fuer die Bahnhoefe fest.
 	 * 
-	 * @param name:String Der Name des Bahnhofs
-	 * @param feldNr:int Auf welchem Feld der Bahnhof ist
+	 * @param name Der Name des Bahnhofs.
+	 * @param feldNr Auf welchem Feld der Bahnhof ist.
 	 */
 	public Bahnhof(String name, int feldNr) {
 		this.name = name;
-		this.feldNr = feldNr; // Soll der Index im Felder Array sein. Braucht man das überhaupt, wenn es schon
-								// an der Stelle im Array ist?
+		this.feldNr = feldNr; 
 		hypothek = false;
 		hypothekenWert = 100;
 		kaufpreis = 200;
@@ -42,16 +34,16 @@ public class Bahnhof extends Feld {
 	 * Pruefen, wer ist Besitzer -> Besitzer == aktiver spieler wenn ja -> keine
 	 * Miete und in switch-case mit Aktionen wenn nein -> zaehlen wie viele Bahnhoefe
 	 * der Besitzer hat und aktiven spieler bezahlen lassen 
-	 * Wenn nein -> 
+	 * Wenn nein ->
 	 * Spieler fragen, ob er den Bahnhof kaufen will oder nicht. 
-	 * Pruefen, ob genug Geld
-	 * vorhanden ist Wenn ja -> Bahnhof wird gekauft. 
+	 * Pruefen, ob genug Geld vorhanden ist.
+	 * Wenn ja -> Bahnhof wird gekauft. 
 	 * Wenn nein -> Zug ist vorbei.
 	 * 
 	 * 
-	 * @param spieler:Spielfigur
-	 * @param nichtspieler:ArrayList<Spielfigur>
-	 * @param felder:Feld[]
+	 * @param spieler Das Objekt des Spielers.
+     * @param nichtspieler Die ArrayList mit Objekten von nicht aktiven Spielern.
+     * @param felder Das Array mit allen Objekten auf dem Spielfeld.
 	 */
 	public void betrittFeld(Spielfigur spieler, ArrayList<Spielfigur> nichtspieler, Feld[] felder) {
 		System.out.println("Sie sind jetzt auf dem Feld [" + name + "].");

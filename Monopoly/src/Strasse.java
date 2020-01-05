@@ -16,7 +16,7 @@ public class Strasse extends Feld {
      * Im Konstruktor werden die übergebenen Parameter übernommen und 
      * die Preise für kaufpreis, hypothekenwert, hausPreis und miete 
      * entsprechend der Farbe und der besonderen Stellung im Spielfeld
-     * gesetzt.
+     * gesetzt. Es werden nur Standardwerte für noch nicht genutzte Straßen festgelegt.
      * 
      * @param serie
      * @param strasse
@@ -127,6 +127,17 @@ public class Strasse extends Feld {
         }
     }
 
+    /**
+     * Prüft, ob die Strasse schon im Besitz von einem Spieler ist
+     * Wenn ja -> Prüft, ob der Spieler die Strasse besitzt
+     * 			  wenn ja -> Möglichkeit Haus oder Hotel zu bauen
+     * 			  wenn nein -> Prozess Miete zu zahlen
+     * wenn nein -> Möglichkeit die Strasse zu kaufen.
+     * 
+     * @param spieler Das Objekt des Spielers.
+     * @param nichtspieler Die ArrayList mit Objekten von nicht aktiven Spielern.
+     * @param felder Das Array mit allen Objekten auf dem Spielfeld.
+     */
     public void betrittFeld(Spielfigur spieler, ArrayList<Spielfigur> nichtspieler, Feld[] felder) {
         System.out.println("Sie sind jetzt auf dem Feld[" + name + "].");
         System.out.println();

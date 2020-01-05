@@ -11,6 +11,13 @@ public class Stadtwerke extends Feld {
 
 	private int type, hypothekenWert, kaufpreis, werkNummer;
 
+	/**
+	 * Legt die Standardwerte für Stadtwerke fest, die noch nicht
+	 * im Besitz von jemandem sind,
+	 * 
+	 * @param werkNummer Nummer des Stadtwerks
+	 * @param name Name des Stadtwerks
+	 */
 	public Stadtwerke(int werkNummer, String name) {
 		this.name = name;
 		this.werkNummer = werkNummer;
@@ -21,7 +28,17 @@ public class Stadtwerke extends Feld {
 		besitzer = null;
 
 	}
-
+	/**
+	 * Prüft, ob das Stadtwerk schon im Besitz von einem Spieler ist
+     * Wenn ja -> Prüft, ob der Spieler das Stadtwerk besitzt
+     * 			  wenn ja -> Ausgabe und keine andere Aktion
+     * 			  wenn nein -> Prozess Miete zu zahlen
+     * wenn nein -> Möglichkeit das Stadtwerk zu kaufen.
+	 * 
+	 * @param spieler Das Objekt des Spielers.
+     * @param nichtspieler Die ArrayList mit Objekten von nicht aktiven Spielern.
+     * @param felder Das Array mit allen Objekten auf dem Spielfeld.
+	 */
 	public void betrittFeld(Spielfigur spieler, ArrayList<Spielfigur> nichtspieler, Feld[] felder) {
 		System.out.println("Sie sind jetzt auf dem Feld [" + name + "].");
 		Scanner sc = new Scanner(System.in);
@@ -29,7 +46,6 @@ public class Stadtwerke extends Feld {
 
 		if (wirdBesessen) {
 			if (besitzer == spieler) {
-				// Kann nichts machen oder?
 				System.out.println("Ihnen gehört das" + name + " schon.");
 			} else {
 				int miete = 0;
