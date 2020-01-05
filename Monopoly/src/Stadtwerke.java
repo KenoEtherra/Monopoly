@@ -48,11 +48,11 @@ public class Stadtwerke extends Feld {
 				}
 				break;
 			case 2:
-				System.out.println("Sie kaufen das " + name + " nicht und Ihr Zug ist vorbei.");
+				System.out.println("Sie kaufen das " + name + " nicht.");
 				break;
 			}
 		}
-		sc.close();
+		
 	}
 	
 	public Spielfigur getBesitzer() {

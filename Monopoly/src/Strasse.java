@@ -165,7 +165,7 @@ public class Strasse extends Feld {
 				switch (scanSTR) {
 				case "ja":
 					if(spieler.getGeld() < kaufpreis) {
-						System.out.println("Sie haben nicht genug Geld, um diese Strasse zu kaufen! Ihr Zug ist hiermit vorbei.");
+						System.out.println("Sie haben nicht genug Geld, um diese Strasse zu kaufen!");
 						i = 1; //Schleife ist vorbei
 						break;
 					} else {
@@ -177,8 +177,7 @@ public class Strasse extends Feld {
 					}
 					break;
 				case "nein":
-					System.out.println("Ok. Damit ist ihr Zug vorbei.");
-					i = 1; //Schleife ist vorbei
+					
 					break;
 				default:
 					System.out.println("Das ist kein gültiger Befehl. Nochmal!");
@@ -186,7 +185,7 @@ public class Strasse extends Feld {
 				}
 			}
 		}
-		sc.close();
+		
 	}
 
 	public int mieteKalkulieren() {
