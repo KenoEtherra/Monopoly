@@ -27,10 +27,8 @@ public class Spielfigur {
         this.setDefaultPlayer();
     }
     /**
-     * Legt die Startwerte fuer die Bahnhoefe fest.
-     *
-     * @param name:String Der Name des Bahnhofs
-     * @param feldNr:int Auf welchem Feld der Bahnhof ist
+     * Würfelt und findet heraus ob man einen pasch würfelt
+     * return int gibt würfel wert zurück
      */
     public int wuerfeln() {
         int wuerfel1 = (int) (Math.random() * 6) + 1;
