@@ -28,9 +28,10 @@ public class Stadtwerke extends Feld {
 		
 		if (wirdBesessen) {
 			if (besitzer == spieler) {
-
+				// Kann nichts machen oder?
 			} else {
 				// Miete
+				// Brauche den Würfelwert dafür.
 			}
 		} else {
 			System.out.println("Möchten Sie das " + name + " kaufen[1] oder nicht kaufen[2]?");
@@ -47,7 +48,7 @@ public class Stadtwerke extends Feld {
 				}
 				break;
 			case 2:
-				System.out.println("Sie kaufen das " + name + " nicht.");
+				System.out.println("Sie kaufen das " + name + " nicht und Ihr Zug ist vorbei.");
 				break;
 			}
 		}

@@ -160,23 +160,25 @@ public class Strasse extends Feld {
 		} else {
 			int i = 0;
 			while (i == 0) {
-				System.out.println("Möchten Sie die Strasse kaufen? Preis = " + kaufpreis + " €. [ja/nein]");
+				System.out.println("Möchten Sie [" + name + "] kaufen? Preis = " + kaufpreis + " €. [ja/nein]");
 				scanSTR = sc.next();
 				switch (scanSTR) {
 				case "ja":
 					if(spieler.getGeld() < kaufpreis) {
-						System.out.println("Sie haben nicht genug Geld, um diese Straße zu kaufen! Ihr Zug ist hiermit vorbei.");
-						i = 1;
+						System.out.println("Sie haben nicht genug Geld, um diese Strasse zu kaufen! Ihr Zug ist hiermit vorbei.");
+						i = 1; //Schleife ist vorbei
 						break;
 					} else {
 						spieler.setGeld(spieler.getGeld() - kaufpreis);
 						wirdBesessen = true;
 						besitzer = spieler;
 						System.out.println("Sie haben [" + name + "] gekauft!");
+						i = 1; //Schleife ist vorbei
 					}
 					break;
 				case "nein":
 					System.out.println("Ok. Damit ist ihr Zug vorbei.");
+					i = 1; //Schleife ist vorbei
 					break;
 				default:
 					System.out.println("Das ist kein gültiger Befehl. Nochmal!");
