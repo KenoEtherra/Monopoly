@@ -55,9 +55,9 @@ public class Bahnhof extends Feld {
 			switch (scan) {
 			case 1:
 				if (spieler.getGeld() > kaufpreis) {
+					spieler.setGeld(spieler.getGeld() - kaufpreis);
 					besitzer = spieler;
 					wirdBesessen = true;
-					spieler.setGeld(spieler.getGeld() - kaufpreis);
 					System.out.println("Sie haben den " + name + " erfolgreich gekauft!");
 				} else {
 					System.out.println("Sie haben nicht genug Geld, um den " + name + " zu kaufen.");

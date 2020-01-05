@@ -117,19 +117,22 @@ public class Strasse extends Feld {
 		Scanner sc = new Scanner(System.in);
 		int scanINT = 0;
 		String scanSTR = "";
-		Spielfigur aktiverSpieler = spieler; //Temp
 		
 		if (wirdBesessen) {
-			if(spieler == besitzer) {
+			if (spieler == besitzer) {
 				System.out.println("Möchten Sie ein Haus/Hotel bauen[1] oder nichts tun[2]?");
 				scanINT = sc.nextInt();
 				switch (scanINT) {
 				case 1:
-					if(haus == 4) {
-						System.out.println("Sie haben bereits 4 Häuser. Sind Sie sicher, dass sie ein Hotel bauen wollen?");
+					if (haus == 4) {
+						System.out.println(
+								"Sie haben bereits 4 Häuser. Sind Sie sicher, dass sie ein Hotel bauen wollen? [ja/nein]");
 						scanSTR = sc.next();
 						switch (scanSTR) {
 						case "ja":
+							if (spieler.getGeld() < hausPreis) {
+								
+							}
 							haus = 0;
 							hotel = true;
 							miete = 250;
@@ -142,7 +145,7 @@ public class Strasse extends Feld {
 							break;
 						}
 					} else {
-						
+					
 					}
 					break;
 				case 2:
@@ -152,16 +155,39 @@ public class Strasse extends Feld {
 					break;
 				}
 			} else {
-				//Miete
+				// Miete
 			}
 		} else {
-			//Kaufen oder nicht kaufen
+			int i = 0;
+			while (i == 0) {
+				System.out.println("Möchten Sie die Strasse kaufen? Preis = " + kaufpreis + " €. [ja/nein]");
+				scanSTR = sc.next();
+				switch (scanSTR) {
+				case "ja":
+					if(spieler.getGeld() < kaufpreis) {
+						System.out.println("Sie haben nicht genug Geld, um diese Straße zu kaufen! Ihr Zug ist hiermit vorbei.");
+						i = 1;
+						break;
+					} else {
+						spieler.setGeld(spieler.getGeld() - kaufpreis);
+						wirdBesessen = true;
+						besitzer = spieler;
+						System.out.println("Sie haben [" + name + "] gekauft!");
+					}
+					break;
+				case "nein":
+					System.out.println("Ok. Damit ist ihr Zug vorbei.");
+					break;
+				default:
+					System.out.println("Das ist kein gültiger Befehl. Nochmal!");
+					break;
+				}
+			}
 		}
 	}
-	
+
 	public int mieteKalkulieren() {
-		
-		
+
 		return 2;
 	}
 
