@@ -100,7 +100,7 @@ public class Ereignisfeld extends Feld {
 		case 14:
 			getEreignisfeld("ereignisfeld14");
 			spieler.setPosition(10);
-			spieler.setAussetzten(3);
+			spieler.setAussetzen(3);
 			break;
 		case 15:
 			getEreignisfeld("ereignisfeld15");
