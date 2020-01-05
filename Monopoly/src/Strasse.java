@@ -127,7 +127,7 @@ public class Strasse extends Feld {
 					if (haus == 4) {
 						System.out.println(
 								"Sie haben bereits 4 Häuser. Sind Sie sicher, dass sie ein Hotel bauen wollen? [ja/nein]");
-						scanSTR = sc.next();
+						scanSTR = sc.nextLine();
 						switch (scanSTR) {
 						case "ja":
 							if (spieler.getGeld() < hausPreis) {
