@@ -6,9 +6,10 @@ import java.util.Scanner;
 public class Spielfeld extends Main {
 
     private Feld[] felder;
-
+    /**
+     * Genereriert das Spelfeld mit allen benötigten Feldern
+     */
     public Spielfeld() {
-        // TODO Auto-generated constructor stub
         //40 Felder
         //0 Los
         //1,3,6,8,9,11,13,14,16,18,19,21,23,24,26,27,29,31,32,34,37,39 Straße
@@ -108,7 +109,10 @@ public class Spielfeld extends Main {
         felder[39] = schlossallee;
 
     }
-
+    /**
+     * Startet das Spiel und für alle Züge druch.
+     * Ebenso findet heraus wer als erster dran ist.
+     */
     public void starteSpiel() {
         Spielfigur ersterSpieler = ersterZug();
         System.out.println("Der erste Spieler der Am zug ist: " + ersterSpieler.getName());
@@ -173,7 +177,12 @@ public class Spielfeld extends Main {
             }
         }
     }
-
+    /**
+     * Führt einen Zug durch.
+     * Kümmert sich ums Würfeln
+     *
+     * @param spieler:Spielfigur aktuelleer Spieler
+     */
     public void moveplayer(Spielfigur spieler) {
 
         int gefaengniscounter = 0;
