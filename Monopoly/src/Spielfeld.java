@@ -42,24 +42,24 @@ public class Spielfeld extends Main {
     	Strasse parkstrasse     = new Strasse(7,0,"Parkstrasse","blau");
     	Strasse schlossallee    = new Strasse(7,1,"Schlossallee","blau");
     	
-    	Bahnhof südbahnhof = new Bahnhof("Südbahnhof",5);
-    	Bahnhof westbahnhof = new Bahnhof("Westbahnhof",15);
-    	Bahnhof nordbahnhof = new Bahnhof("Nordbahnhof",25);
-    	Bahnhof hauptbahnhof = new Bahnhof("Hauptbahnhof",35);
+    	Bahnhof südbahnhof      = new Bahnhof("Südbahnhof",5);
+    	Bahnhof westbahnhof     = new Bahnhof("Westbahnhof",15);
+    	Bahnhof nordbahnhof     = new Bahnhof("Nordbahnhof",25);
+    	Bahnhof hauptbahnhof    = new Bahnhof("Hauptbahnhof",35);
     	
-    	Stadtwerke elekwerk = new Stadtwerke(0,"Elektrizitätswerk");
-    	Stadtwerke wasswerk = new Stadtwerke(1,"Wasserwerk");
+    	Stadtwerke elekwerk     = new Stadtwerke(0,"Elektrizitätswerk");
+    	Stadtwerke wasswerk     = new Stadtwerke(1,"Wasserwerk");
     	
-    	Gefaengnis gefägnis = new Gefaengnis();
+    	Gefaengnis gefägnis     = new Gefaengnis();
     	
-    	Polizist polizist = new Polizist();
+    	Polizist polizist       = new Polizist();
     	
-    	Steuer einksteuer = new Steuer(4);
-    	Steuer zusasteuer = new Steuer(38);
+    	Steuer einksteuer       = new Steuer(4);
+    	Steuer zusasteuer       = new Steuer(38);
     	
     	Gemeinschaftsfeld gemfeld = new Gemeinschaftsfeld();
     	
-    	Ereignisfeld ergfeld = new Ereignisfeld();
+    	Ereignisfeld ergfeld      = new Ereignisfeld();
     	
     	
     	felder[0]=los;
