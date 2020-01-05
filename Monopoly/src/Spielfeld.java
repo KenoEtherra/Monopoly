@@ -169,6 +169,7 @@ public class Spielfeld extends Main {
             felder[position].betrittFeld(spieler, getNichtspieler(spieler), felder);
 
             while (gefaengniscounter > 0) {
+                spieler.setPasch(0);
                 if (gefaengniscounter == 3) {
                     spieler.setPasch(0);
                     felder[30].betrittFeld(spieler, getNichtspieler(spieler), felder);
@@ -178,6 +179,7 @@ public class Spielfeld extends Main {
                 System.out.println("Du hast gewürfelt: " + wuerfelWert);
                 pasch = spieler.getPasch();
                 if (pasch != 0) {
+                    gefaengniscounter++;
                     System.out.println("Du hast den " + gefaengniscounter + ". Pasch");
                 } else {
                     gefaengniscounter = 0;
