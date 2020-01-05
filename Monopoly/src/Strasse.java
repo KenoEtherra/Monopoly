@@ -28,7 +28,7 @@ public class Strasse extends Feld {
 			break;
 		case "hellblau":
 			hausPreis = 50;
-			if (name.equals("PostStrasse")) {
+			if (name.equals("Poststrasse")) {
 				kaufpreis = 120;
 				hypothekenwert = 60;
 				miete = 8;
@@ -76,7 +76,7 @@ public class Strasse extends Feld {
 			break;
 		case "gelb":
 			hausPreis = 150;
-			if (name.equals("GoetheStrasse")) {
+			if (name.equals("Goethestrasse")) {
 				kaufpreis = 280;
 				hypothekenwert = 140;
 				miete = 24;
@@ -88,7 +88,7 @@ public class Strasse extends Feld {
 			break;
 		case "grün":
 			hausPreis = 200;
-			if (name.equals("BahnhofStrasse")) {
+			if (name.equals("Bahnhofstrasse")) {
 				kaufpreis = 320;
 				hypothekenwert = 160;
 				miete = 28;
