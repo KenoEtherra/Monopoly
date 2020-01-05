@@ -46,15 +46,15 @@ public class Spielfeld extends Main {
         Strasse bahnhofstrasse = new Strasse(6, 2, "Bahnhofstrasse", "grün");
         Strasse parkstrasse = new Strasse(7, 0, "Parkstrasse", "blau");
         Strasse schlossallee = new Strasse(7, 1, "Schlossallee", "blau");
-
+        //Bahnhif(Name,Position)
         Bahnhof südbahnhof = new Bahnhof("Südbahnhof", 5);
         Bahnhof westbahnhof = new Bahnhof("Westbahnhof", 15);
         Bahnhof nordbahnhof = new Bahnhof("Nordbahnhof", 25);
         Bahnhof hauptbahnhof = new Bahnhof("Hauptbahnhof", 35);
-
+        //Stadtwerke(Int Serie,Name)
         Stadtwerke elekwerk = new Stadtwerke(0, "Elektrizitätswerk");
         Stadtwerke wasswerk = new Stadtwerke(1, "Wasserwerk");
-
+        //Dingens()
         Gefaengnis gefängnis = new Gefaengnis();
 
         Polizist polizist = new Polizist();
@@ -64,7 +64,7 @@ public class Spielfeld extends Main {
         Gemeinschaftsfeld gemfeld = new Gemeinschaftsfeld();
 
         Ereignisfeld ergfeld = new Ereignisfeld();
-
+        //Felder Array mit dem entsprechendem Objekt auf der richtigen Position auf dem Spielfeld.
         felder = new Feld[40];
         felder[0] = los;
         felder[1] = badstrasse;
