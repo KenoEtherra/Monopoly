@@ -10,7 +10,13 @@ public class Steuer extends Feld {
 	public Steuer() {
 		super();
 	}
-
+	/**
+	 * Prüfen auf welcher Position sich der Spieler befindet
+	 * 2 Steuerarten, die beim SPieler abgezogen und in den Steuertopf eingezahlt werden
+	 * Steuer 1: Einkommenssteuer von 200 €
+	 * Steuer 2: Zusatzsteuer von 100 €
+	 * Feld Freiparken, bei dem die bisher gezahlten Steuern entnommen werden
+	 */
 	public void betrittFeld(Spielfigur spieler, ArrayList<Spielfigur> nichtspieler, Feld[] felder) {
 		if (spieler.getPosition() == 4) {
 			spieler.setGeld (spieler.getGeld() - betrag1);

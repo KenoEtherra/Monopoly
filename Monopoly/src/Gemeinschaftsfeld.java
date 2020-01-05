@@ -9,6 +9,9 @@ public class Gemeinschaftsfeld extends Feld {
 	public Gemeinschaftsfeld() {
 	}
 	 
+	/**
+	 * Switch-Case mit 15 Möglichkeiten. Beinhaltet die 15 Gemeinschaftskarten die der Spieler erhalten kann
+	 */
 	public void betrittFeld(Spielfigur spieler, ArrayList<Spielfigur> nichtspieler, Feld[] felder) {
 		switch((int)(Math.random()*16+1)) {
 		case 1:
@@ -55,7 +58,6 @@ public class Gemeinschaftsfeld extends Feld {
 			getGemeinschaftsfeld("gemeinschaftsfeld11");
 			felder[1].betrittFeld(spieler, nichtspieler, felder);
 			spieler.setPosition(1);
-			//Gehe zurück zu Badstraße.
 			break;
 		case 11:
 			getGemeinschaftsfeld("gemeinschaftsfeld12");
@@ -80,7 +82,9 @@ public class Gemeinschaftsfeld extends Feld {
 			break;
 		}
 	}
-	
+	/**
+	 * Liest die einzelnen Gemeinschaftskarten aus der config-Datei um sie dann auszugeben.
+	 */
 	private static void getGemeinschaftsfeld(String a) {
 		 try (InputStream input = new FileInputStream("Monopoly/src/config.properties")) {
 	            Properties prop = new Properties();
