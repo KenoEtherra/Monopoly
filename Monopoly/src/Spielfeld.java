@@ -128,23 +128,49 @@ public class Spielfeld extends Main {
             for (int i = 1; i <= anzahlSpieler; i++) {
                 switch (i) {
                     case 1:
-                        moveplayer(spieler1);
+                        if (!spieler1.isBroken()) {
+                            moveplayer(spieler1);
+                        }
                         break;
                     case 2:
-                        moveplayer(spieler2);
+                        if (!spieler2.isBroken()) {
+                            moveplayer(spieler2);
+                        }
                         break;
                     case 3:
-                        moveplayer(spieler3);
+                        if (!spieler3.isBroken()) {
+                            moveplayer(spieler3);
+                        }
                         break;
                     case 4:
-                        moveplayer(spieler4);
+                        if (!spieler4.isBroken()) {
+                            moveplayer(spieler4);
+                        }
                         break;
                 }
+            }
+            if (spieler1.isBroken()) {
+                alleSpieler.remove(spieler1);
+            }
+            if (spieler2.isBroken()) {
+                alleSpieler.remove(spieler2);
+            }
+            if (spieler3.isBroken()) {
+                alleSpieler.remove(spieler3);
+            }
+            if (spieler4.isBroken()) {
+                alleSpieler.remove(spieler4);
+            }
+            if (alleSpieler.size() == 1) {
+                System.out.println(alleSpieler.get(0).getName() + " hat gewonnen!!! ");
+                System.out.println("Das Spiel ist vorbei!");
+                break;
             }
         }
     }
 
     public void moveplayer(Spielfigur spieler) {
+
         int gefaengniscounter = 0;
         System.out.println();
         System.out.println(spieler.getName() + " ist dran!");
@@ -197,9 +223,10 @@ public class Spielfeld extends Main {
             spieler.setPasch(0);
 
             if (spieler.getGeld() <= 0) {
+                spieler.setBroken(true);
                 System.out.println(spieler.getName() + "ist ausgeschieden!");
-                //alleSpieler.remove(spieler);
             }
+
             System.out.println("Der zug ist beendet!");
         }
     }

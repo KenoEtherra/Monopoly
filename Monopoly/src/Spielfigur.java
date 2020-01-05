@@ -17,6 +17,8 @@ public class Spielfigur {
 
     private int pasch;
 
+    private boolean broken = false;
+
     public Spielfigur(String name) {
         this.setName(name);
         this.setDefaultPlayer();
@@ -51,6 +53,13 @@ public class Spielfigur {
         }
     }
 
+    public boolean isBroken() {
+        return broken;
+    }
+
+    public void setBroken(boolean broken) {
+        this.broken = broken;
+    }
 
     /**
      * @return the pasch
