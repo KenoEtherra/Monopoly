@@ -165,6 +165,7 @@ public class Strasse extends Feld {
             } else {
             	int auszahlendeMiete = this.getMiete();
             	int feldcounter = 0;
+            	int potenzWert = 0;
                 for (int i = 0; i < felder.length; i++) {
                     if (felder[i] instanceof Strasse) {
                         Strasse straße = (Strasse) felder[i];
@@ -175,18 +176,23 @@ public class Strasse extends Feld {
                 }
                 if (feldcounter > 1) {
 					if (this.getSerie() == 0 && this.getSerie() == 7) {
-						auszahlendeMiete = auszahlendeMiete * 2;
+						potenzWert = (int)Math.pow(2.0, 2.0);
+						auszahlendeMiete = auszahlendeMiete * potenzWert;
 					} else {
 						if (feldcounter == 3) {
-							auszahlendeMiete = auszahlendeMiete * 2;
+							potenzWert = (int)Math.pow(2.0, 2.0);
+							auszahlendeMiete = auszahlendeMiete * potenzWert;
 						}
 					}
 				}
                 if (this.getHaus() > 0) {
-                	auszahlendeMiete = auszahlendeMiete * this.getHaus();
+                	
+                	potenzWert = (int)Math.pow(2.0, 4.0);
+                	auszahlendeMiete = auszahlendeMiete * potenzWert;
 				}
 				if (this.isHotel()) {
-					auszahlendeMiete = auszahlendeMiete * 5;
+					potenzWert = (int)Math.pow(2.0, 5.0);
+					auszahlendeMiete = auszahlendeMiete * potenzWert;
 				}
 				System.out.println("Sie zahlen " + auszahlendeMiete + "€ Miete.");
             }
