@@ -212,6 +212,8 @@ public class Spielfeld extends Main {
                 }
                 position = spieler.getPosition() + wuerfelWert;
                 if (position > 39) {
+                    System.out.println("Du bist über los gezogen du erhälst 200!");
+                    spieler.setGeld(spieler.getGeld() + 200);
                     position = position - 39;
                 }
 
