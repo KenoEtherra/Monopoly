@@ -60,8 +60,6 @@ public class Spielfeld extends Main {
 
         Steuer steuer = new Steuer();
 
-        Freiparken freiparken = new Freiparken();
-
         Gemeinschaftsfeld gemfeld = new Gemeinschaftsfeld();
 
         Ereignisfeld ergfeld = new Ereignisfeld();
@@ -87,7 +85,7 @@ public class Spielfeld extends Main {
         felder[17] = gemfeld;
         felder[18] = wienerstrasse;
         felder[19] = berlinerstrasse;
-        felder[20] = freiparken;
+        felder[20] = steuer;
         felder[21] = theaterstrasse;
         felder[22] = ergfeld;
         felder[23] = museumstrasse;
