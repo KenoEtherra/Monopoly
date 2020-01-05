@@ -13,6 +13,11 @@ public class Ereignisfeld extends Feld {
 		switch((int)(Math.random()*15+1)) {
 		case 1:
 			getEreignisfeld("ereignisfeld1");
+			if(spieler.getPosition() > 12) {
+				spieler.setGeld(spieler.getGeld()+400);
+			}
+			felder[11].betrittFeld(spieler, nichtspieler, felder);
+			spieler.setPosition(11);
 			//Rücke vor zur Seestraße. Wenn du über Los kommst, ziehe 400\u20AC ein.
 			break;
 		case 2:
@@ -40,17 +45,20 @@ public class Ereignisfeld extends Feld {
 			getEreignisfeld("ereignisfeld7");
 			spieler.setPosition(39);
 			felder[39].betrittFeld(spieler, nichtspieler, felder);
-			// feld ausführen
 			break;
 		case 8:
 			getEreignisfeld("ereignisfeld8");
+			if(spieler.getPosition() > 24) {
+				spieler.setGeld(spieler.getGeld()+400);
+			}
+			felder[24].betrittFeld(spieler, nichtspieler, felder);
 			spieler.setPosition(24);
 			//Rücke vor bis zum Opernplatz. Wenn du über Los kommst, ziehe 400\u20AC ein.
 			break;
 		case 9:
 			getEreignisfeld("ereignisfeld9");
 			spieler.setPosition(spieler.getPosition()-3);
-			// feld ausführen
+			felder[spieler.getPosition()-3].betrittFeld(spieler, nichtspieler, felder);
 			break;
 		case 10:
 			getEreignisfeld("ereignisfeld10");
