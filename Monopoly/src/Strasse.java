@@ -9,9 +9,11 @@ public class Strasse extends Feld {
 
 	private String name, farbe;
 
-	private int haus, hausPreis, miete, kaufpreis, hypothekenwert;
+	private int haus, hausPreis, miete, kaufpreis, hypothekenwert, serie, strasse;
 
 	public Strasse(int serie, int strasse, String name, String farbe) {
+		this.serie = serie;
+		this.strasse = strasse;
 		this.name = name;
 		this.farbe = farbe;
 		haus = 0;
