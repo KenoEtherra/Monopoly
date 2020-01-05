@@ -10,7 +10,7 @@ public class Ereignisfeld extends Feld {
     }
 
 	public void betrittFeld(Spielfigur spieler, ArrayList<Spielfigur> nichtspieler, Feld[] felder) {
-		switch((int)(Math.random()*15+1)) {
+		switch((int)(Math.random()*14+1)) {
 		case 1:
 			getEreignisfeld("ereignisfeld1");
 			if(spieler.getPosition() > 12) {
@@ -29,24 +29,20 @@ public class Ereignisfeld extends Feld {
 			spieler.setGeld(spieler.getGeld()+300);
 			break;
 		case 4:
-			getEreignisfeld("ereignisfeld4");
-			spieler.setGefaengnisFreikarte(spieler.getGefaengnisFreikarte()+1);
-			break;
-		case 5:
 			getEreignisfeld("ereignisfeld5");
 			spieler.setPosition(0);
 			spieler.setGeld(spieler.getGeld()+400);
 			break;
-		case 6:
+		case 5:
 			getEreignisfeld("ereignisfeld6");
 			spieler.setGeld(spieler.getGeld()+100);
 			break;
-		case 7:
+		case 6:
 			getEreignisfeld("ereignisfeld7");
 			spieler.setPosition(39);
 			felder[39].betrittFeld(spieler, nichtspieler, felder);
 			break;
-		case 8:
+		case 7:
 			getEreignisfeld("ereignisfeld8");
 			if(spieler.getPosition() > 24) {
 				spieler.setGeld(spieler.getGeld()+400);
@@ -55,12 +51,12 @@ public class Ereignisfeld extends Feld {
 			spieler.setPosition(24);
 			//Rücke vor bis zum Opernplatz. Wenn du über Los kommst, ziehe 400\u20AC ein.
 			break;
-		case 9:
+		case 8:
 			getEreignisfeld("ereignisfeld9");
 			spieler.setPosition(spieler.getPosition()-3);
 			felder[spieler.getPosition()-3].betrittFeld(spieler, nichtspieler, felder);
 			break;
-		case 10:
+		case 9:
 			getEreignisfeld("ereignisfeld10");
 			int hotelcounter = 0;
 			int hauscounter = 0;	
@@ -79,7 +75,7 @@ public class Ereignisfeld extends Feld {
 			int summe = 50*hauscounter + 200*hotelcounter;
 			spieler.setGeld(spieler.getGeld()-summe);
 			break;
-		case 11:
+		case 10:
 			getEreignisfeld("ereignisfeld11");
 			int hotelcounter1 = 0;
 			int hauscounter1 = 0;
@@ -98,20 +94,20 @@ public class Ereignisfeld extends Feld {
 			int summe1 = 80*hauscounter1 + 230*hotelcounter1;
 			spieler.setGeld(spieler.getGeld()-summe1);
 			break;
-		case 12:
+		case 11:
 			getEreignisfeld("ereignisfeld12");
 			spieler.setGeld(spieler.getGeld()-40);
 			break;
-		case 13:
+		case 12:
 			getEreignisfeld("ereignisfeld13");
 			spieler.setGeld(spieler.getGeld()-30);
 			break;
-		case 14:
+		case 13:
 			getEreignisfeld("ereignisfeld14");
 			spieler.setPosition(10);
 			spieler.setAussetzen(3);
 			break;
-		case 15:
+		case 14:
 			getEreignisfeld("ereignisfeld15");
 			spieler.setGeld(spieler.getGeld()-50);
 			break;
