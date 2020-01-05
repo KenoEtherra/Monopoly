@@ -39,6 +39,7 @@ public class Ereignisfeld extends Feld {
 		case 7:
 			getEreignisfeld("ereignisfeld7");
 			spieler.setPosition(39);
+			felder[39].betrittFeld(spieler, nichtspieler, felder);
 			// feld ausführen
 			break;
 		case 8:
