@@ -63,7 +63,7 @@ public class Ereignisfeld extends Feld {
 		case 10:
 			getEreignisfeld("ereignisfeld10");
 			int hotelcounter = 0;
-			int strassencounter = 0;	
+			int hauscounter = 0;	
 			for(int i = 0; i < felder.length; i++) {
 				if(felder[i] instanceof Strasse) {
 					Strasse straße = (Strasse) felder[i];
@@ -71,18 +71,18 @@ public class Ereignisfeld extends Feld {
 						if(straße.isHotel() == true) {
 							hotelcounter++;
 						}else {
-							strassencounter += straße.getHaus();
+							hauscounter += straße.getHaus();
 						}
 					}
 				}
 			}
-			int summe = 50*strassencounter + 200*hotelcounter;
+			int summe = 50*hauscounter + 200*hotelcounter;
 			spieler.setGeld(spieler.getGeld()-summe);
 			break;
 		case 11:
 			getEreignisfeld("ereignisfeld11");
 			int hotelcounter1 = 0;
-			int strassencounter1 = 0;
+			int hauscounter1 = 0;
 			for(int i = 0; i < felder.length; i++) {
 				if(felder[i] instanceof Strasse) {
 					Strasse straße = (Strasse) felder[i];
@@ -90,12 +90,12 @@ public class Ereignisfeld extends Feld {
 						if(straße.isHotel() == true) {
 							hotelcounter1++;
 						}else {
-							strassencounter1 += straße.getHaus();
+							hauscounter1 += straße.getHaus();
 						}
 					}
 				}
 			}
-			int summe1 = 80*strassencounter1 + 230*hotelcounter1;
+			int summe1 = 80*hauscounter1 + 230*hotelcounter1;
 			spieler.setGeld(spieler.getGeld()-summe1);
 			break;
 		case 12:
