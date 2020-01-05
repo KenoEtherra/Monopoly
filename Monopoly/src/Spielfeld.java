@@ -169,6 +169,7 @@ public class Spielfeld extends Main {
             felder[position].betrittFeld(spieler, getNichtspieler(spieler), felder);
 
             while (gefaengniscounter > 0) {
+                spieler.setPasch(0);
                 if (gefaengniscounter == 3) {
                     spieler.setPasch(0);
                     felder[30].betrittFeld(spieler, getNichtspieler(spieler), felder);
