@@ -27,8 +27,9 @@ public class Main {
      */
     private static void initializiereSpieler() {
         Scanner scanner = new Scanner(System.in);
-        System.out.println("Wie viele Spieler sollen mitspielen?");
-        int anzahl;
+        //System.out.println("Wie viele Spieler sollen mitspielen?");
+        int anzahl = 4;
+        /**
         while (true) {
             anzahl = scanner.nextInt();
             if (anzahl > 0 && anzahl < 5) {
@@ -37,6 +38,7 @@ public class Main {
                 System.out.println("Es können nur 1 bis 4 Spieler teilnehmen!");
             }
         }
+         **/
         for (int i = 1; i <= anzahl; i++) {
             Spielfigur spieler = new Spielfigur("Spieler " + i);
             alleSpieler.add(spieler);
