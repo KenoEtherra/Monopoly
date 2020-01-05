@@ -12,7 +12,7 @@ public class Gemeinschaftsfeld extends Feld {
 	 
 	public void betrittFeld(Spielfigur spieler, ArrayList<Spielfigur> nichtspieler, Feld[] felder) {
 		switch((int)(Math.random()*16+1)) {
-		case 1: //Du hast Geburtstag. Ziehe von jedem Spieler 200€ ein.
+		case 1:
 			getGemeinschaftsfeld("gemeinschaftsfeld1");
 			for(int i = 0; i < nichtspieler.size(); i++) {
 				nichtspieler.get(i).setGeld(nichtspieler.get(i).getGeld());
@@ -67,7 +67,7 @@ public class Gemeinschaftsfeld extends Feld {
 		case 13:
 			getGemeinschaftsfeld("gemeinschaftsfeld13");
 			spieler.setPosition(10);
-			spieler.setAussetzten(3);
+			spieler.setAussetzen(3);
 			break;
 		case 14:
 			getGemeinschaftsfeld("gemeinschaftsfeld14");
