@@ -146,7 +146,9 @@ public class Spielfeld extends Main {
 
     public void moveplayer(Spielfigur spieler) {
         int gefaengniscounter = 0;
+        System.out.println();
         System.out.println(spieler.getName() + " ist dran!");
+        System.out.println("Geld: " + spieler.getGeld());
         // überprüfung auf aussetzen
         if (spieler.getAussetzen() != 0) {
             System.out.println("Du musst aussetzen!");
@@ -156,7 +158,7 @@ public class Spielfeld extends Main {
             System.out.println("Du hast gewürfelt: " + wuerfelWert);
             int pasch = spieler.getPasch();
             if (pasch != 0) {
-                System.out.println("Du hast 1. Pasch!");
+                System.out.println("Du hast den 1. Pasch!");
                 gefaengniscounter = 1;
             }
 
@@ -180,7 +182,7 @@ public class Spielfeld extends Main {
                 pasch = spieler.getPasch();
                 if (pasch != 0) {
                     gefaengniscounter++;
-                    System.out.println("Du hast den " + gefaengniscounter + ". Pasch");
+                    System.out.println("Du hast den den " + gefaengniscounter + ". Pasch");
                 } else {
                     gefaengniscounter = 0;
                 }
@@ -198,6 +200,7 @@ public class Spielfeld extends Main {
                 System.out.println(spieler.getName() + "ist ausgeschieden!");
                 //alleSpieler.remove(spieler);
             }
+            System.out.println("Den zug ist beendet!");
         }
     }
 
