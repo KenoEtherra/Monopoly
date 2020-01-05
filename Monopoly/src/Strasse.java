@@ -12,6 +12,17 @@ public class Strasse extends Feld {
 
     private int haus, hausPreis, miete, kaufpreis, hypothekenwert, serie, strasse;
 
+    /**
+     * Im Konstruktor werden die übergebenen Parameter übernommen und 
+     * die Preise für kaufpreis, hypothekenwert, hausPreis und miete 
+     * entsprechend der Farbe und der besonderen Stellung im Spielfeld
+     * gesetzt.
+     * 
+     * @param serie
+     * @param strasse
+     * @param name
+     * @param farbe
+     */
     public Strasse(int serie, int strasse, String name, String farbe) {
         this.serie = serie;
         this.strasse = strasse;
@@ -178,10 +189,14 @@ public class Strasse extends Feld {
 					if (this.getSerie() == 0 && this.getSerie() == 7) {
 						potenzWert = (int)Math.pow(2.0, (double)this.getHaus());
 						auszahlendeMiete = auszahlendeMiete * potenzWert;
+						spieler.setGeld(spieler.getGeld() - auszahlendeMiete);
+						besitzer.setGeld(besitzer.getGeld() + auszahlendeMiete);
 					} else {
 						if (feldcounter == 3) {
 							potenzWert = (int)Math.pow(2.0, (double)this.getHaus());
 							auszahlendeMiete = auszahlendeMiete * potenzWert;
+							spieler.setGeld(spieler.getGeld() - auszahlendeMiete);
+							besitzer.setGeld(besitzer.getGeld() + auszahlendeMiete);
 						}
 					}
 				}
@@ -189,10 +204,14 @@ public class Strasse extends Feld {
                 	
                 	potenzWert = (int)Math.pow(2.0, (double)this.getHaus());
                 	auszahlendeMiete = auszahlendeMiete * potenzWert;
+                	spieler.setGeld(spieler.getGeld() - auszahlendeMiete);
+                	besitzer.setGeld(besitzer.getGeld() + auszahlendeMiete);
 				}
 				if (this.isHotel()) {
 					potenzWert = (int)Math.pow(2.0, 5.0);
 					auszahlendeMiete = auszahlendeMiete * potenzWert;
+					spieler.setGeld(spieler.getGeld() - auszahlendeMiete);
+					besitzer.setGeld(besitzer.getGeld() + auszahlendeMiete);
 				}
 				System.out.println("Sie zahlen " + auszahlendeMiete + "€ Miete.");
             }
