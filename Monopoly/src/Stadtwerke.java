@@ -34,7 +34,7 @@ public class Stadtwerke extends Feld {
 				System.out.println("Ihnen gehört das" + name + " schon.");
 			} else {
 				int wuerfelWert = spieler.wuerfeln();
-				System.out.println("Sie haben nochmal gewürfelt! Wert: " + wuerfelWert);
+				System.out.println("Es wird der Mietwert gewürfelt: " + wuerfelWert);
 				int miete = 0;
 				switch (werkNummer) {
 				case 0:
