@@ -161,7 +161,7 @@ public class Strasse extends Feld {
 			int i = 0;
 			while (i == 0) {
 				System.out.println("Möchten Sie [" + name + "] kaufen? Preis = " + kaufpreis + " €. [ja/nein]");
-				scanSTR = sc.next();
+				scanSTR = sc.nextLine();
 				switch (scanSTR) {
 				case "ja":
 					if(spieler.getGeld() < kaufpreis) {
