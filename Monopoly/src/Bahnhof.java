@@ -56,7 +56,6 @@ public class Bahnhof extends Feld {
 	public void betrittFeld(Spielfigur spieler, ArrayList<Spielfigur> nichtspieler, Feld[] felder) {
 		System.out.println("Sie sind jetzt auf dem Feld [" + name + "].");
 		Scanner sc = new Scanner(System.in);
-		int scanINT = 0;
 		String scanSTR = "";
 		
 		if (wirdBesessen) {
