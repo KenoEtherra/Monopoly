@@ -9,6 +9,9 @@ public class Ereignisfeld extends Feld {
     public Ereignisfeld() {
     }
 
+	/**
+	 * Switch-Case mit 14 Möglichkeiten. Beinhaltet die 14 Ereigniskarten die der Spieler erhalten kann
+	 */
 	public void betrittFeld(Spielfigur spieler, ArrayList<Spielfigur> nichtspieler, Feld[] felder) {
 		switch((int)(Math.random()*14+1)) {
 		case 1:
@@ -18,7 +21,6 @@ public class Ereignisfeld extends Feld {
 			}
 			felder[11].betrittFeld(spieler, nichtspieler, felder);
 			spieler.setPosition(11);
-			//Rücke vor zur Seestraße. Wenn du über Los kommst, ziehe 400\u20AC ein.
 			break;
 		case 2:
 			getEreignisfeld("ereignisfeld2");
@@ -49,7 +51,6 @@ public class Ereignisfeld extends Feld {
 			}
 			felder[24].betrittFeld(spieler, nichtspieler, felder);
 			spieler.setPosition(24);
-			//Rücke vor bis zum Opernplatz. Wenn du über Los kommst, ziehe 400\u20AC ein.
 			break;
 		case 8:
 			getEreignisfeld("ereignisfeld9");
@@ -113,7 +114,9 @@ public class Ereignisfeld extends Feld {
 			break;
 		}
 	}
-	
+	/**
+	 * Liest die einzelnen Ereigniskarten aus der config-Datei um sie dann auszugeben.
+	 */
 	private static void getEreignisfeld(String a) {
 		 try (InputStream input = new FileInputStream("Monopoly/src/config.properties")) {
 	            Properties prop = new Properties();
