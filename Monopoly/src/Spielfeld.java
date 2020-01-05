@@ -54,9 +54,9 @@ public class Spielfeld extends Main {
     	
     	Polizist polizist       = new Polizist();
     	
-
     	Steuer steuer           = new Steuer();
 
+    	Freiparken freiparken   = new Freiparken();
     	
     	Gemeinschaftsfeld gemfeld = new Gemeinschaftsfeld();
     	
