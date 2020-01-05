@@ -1,355 +1,328 @@
+import javax.swing.*;
 import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Strasse extends Feld {
 
-	private boolean hypothek, wirdBesessen, hotel;
+    private boolean hypothek, wirdBesessen, hotel;
 
-	private Spielfigur besitzer;
+    private Spielfigur besitzer;
 
-	private String name, farbe;
+    private String name, farbe;
 
-	private int haus, hausPreis, miete, kaufpreis, hypothekenwert, serie, strasse;
+    private int haus, hausPreis, miete, kaufpreis, hypothekenwert, serie, strasse;
 
-	public Strasse(int serie, int strasse, String name, String farbe) {
-		this.serie = serie;
-		this.strasse = strasse;
-		this.name = name;
-		this.farbe = farbe;
-		haus = 0;
-		besitzer = null;
-		wirdBesessen = false;
-		hypothek = false;
+    public Strasse(int serie, int strasse, String name, String farbe) {
+        this.serie = serie;
+        this.strasse = strasse;
+        this.name = name;
+        this.farbe = farbe;
+        haus = 0;
+        besitzer = null;
+        wirdBesessen = false;
+        hypothek = false;
 
-		switch (farbe) {
-		case "lila":
-			kaufpreis = 60;
-			hypothekenwert = 30;
-			hausPreis = 50;
-			miete = 2;
-			break;
-		case "hellblau":
-			hausPreis = 50;
-			if (name.equals("Poststrasse")) {
-				kaufpreis = 120;
-				hypothekenwert = 60;
-				miete = 8;
-			} else {
-				kaufpreis = 100;
-				hypothekenwert = 50;
-				miete = 6;
-			}
-			break;
-		case "pink":
-			hausPreis = 100;
-			if (name.equals("Neue Strasse")) {
-				kaufpreis = 160;
-				hypothekenwert = 80;
-				miete = 12;
-			} else {
-				kaufpreis = 140;
-				hypothekenwert = 70;
-				miete = 10;
-			}
-			break;
-		case "orange":
-			hausPreis = 100;
-			if (name.equals("Berliner Strasse")) {
-				kaufpreis = 200;
-				hypothekenwert = 100;
-				miete = 16;
-			} else {
-				kaufpreis = 180;
-				hypothekenwert = 90;
-				miete = 14;
-			}
-			break;
-		case "rot":
-			hausPreis = 150;
-			if (name.equals("Opernplatz")) {
-				kaufpreis = 240;
-				hypothekenwert = 120;
-				miete = 20;
-			} else {
-				kaufpreis = 220;
-				hypothekenwert = 110;
-				miete = 18;
-			}
-			break;
-		case "gelb":
-			hausPreis = 150;
-			if (name.equals("Goethestrasse")) {
-				kaufpreis = 280;
-				hypothekenwert = 140;
-				miete = 24;
-			} else {
-				kaufpreis = 260;
-				hypothekenwert = 130;
-				miete = 22;
-			}
-			break;
-		case "grün":
-			hausPreis = 200;
-			if (name.equals("Bahnhofstrasse")) {
-				kaufpreis = 320;
-				hypothekenwert = 160;
-				miete = 28;
-			} else {
-				kaufpreis = 300;
-				hypothekenwert = 150;
-				miete = 26;
-			}
-			break;
-		case "blau":
-			hausPreis = 200;
-			if (name.equals("Schlossallee")) {
-				kaufpreis = 400;
-				hypothekenwert = 200;
-				miete = 50;
-			} else {
-				kaufpreis = 350;
-				hypothekenwert = 175;
-				miete = 50;
-			}
-			break;
-		}
-	}
+        switch (farbe) {
+            case "lila":
+                kaufpreis = 60;
+                hypothekenwert = 30;
+                hausPreis = 50;
+                miete = 2;
+                break;
+            case "hellblau":
+                hausPreis = 50;
+                if (name.equals("Poststrasse")) {
+                    kaufpreis = 120;
+                    hypothekenwert = 60;
+                    miete = 8;
+                } else {
+                    kaufpreis = 100;
+                    hypothekenwert = 50;
+                    miete = 6;
+                }
+                break;
+            case "pink":
+                hausPreis = 100;
+                if (name.equals("Neue Strasse")) {
+                    kaufpreis = 160;
+                    hypothekenwert = 80;
+                    miete = 12;
+                } else {
+                    kaufpreis = 140;
+                    hypothekenwert = 70;
+                    miete = 10;
+                }
+                break;
+            case "orange":
+                hausPreis = 100;
+                if (name.equals("Berliner Strasse")) {
+                    kaufpreis = 200;
+                    hypothekenwert = 100;
+                    miete = 16;
+                } else {
+                    kaufpreis = 180;
+                    hypothekenwert = 90;
+                    miete = 14;
+                }
+                break;
+            case "rot":
+                hausPreis = 150;
+                if (name.equals("Opernplatz")) {
+                    kaufpreis = 240;
+                    hypothekenwert = 120;
+                    miete = 20;
+                } else {
+                    kaufpreis = 220;
+                    hypothekenwert = 110;
+                    miete = 18;
+                }
+                break;
+            case "gelb":
+                hausPreis = 150;
+                if (name.equals("Goethestrasse")) {
+                    kaufpreis = 280;
+                    hypothekenwert = 140;
+                    miete = 24;
+                } else {
+                    kaufpreis = 260;
+                    hypothekenwert = 130;
+                    miete = 22;
+                }
+                break;
+            case "grün":
+                hausPreis = 200;
+                if (name.equals("Bahnhofstrasse")) {
+                    kaufpreis = 320;
+                    hypothekenwert = 160;
+                    miete = 28;
+                } else {
+                    kaufpreis = 300;
+                    hypothekenwert = 150;
+                    miete = 26;
+                }
+                break;
+            case "blau":
+                hausPreis = 200;
+                if (name.equals("Schlossallee")) {
+                    kaufpreis = 400;
+                    hypothekenwert = 200;
+                    miete = 50;
+                } else {
+                    kaufpreis = 350;
+                    hypothekenwert = 175;
+                    miete = 50;
+                }
+                break;
+        }
+    }
 
-	public void betrittFeld(Spielfigur spieler, ArrayList<Spielfigur> nichtspieler, Feld[] felder) {
-		System.out.println("Sie sind jetzt auf dem Feld[" + name + "].");
-		System.out.println();
-		Scanner sc = new Scanner(System.in);
-		int scanINT = 0;
-		String scanSTR = "";
-		
-		if (wirdBesessen) {
-			if (spieler == besitzer) {
-				System.out.println("Ihnen gehört " + name + " bereits.");
-				System.out.println("Möchten Sie ein Haus bauen[ja] oder nicht[nein]? Preis = " + hausPreis + "€.");
-				scanSTR = sc.next();
-				switch (scanSTR) {
-				case "ja":
-					if (haus == 4) {
-						System.out.println(
-								"Sie haben bereits 4 Häuser. Wollen sie ein Hotel bauen? [ja/nein]");
-						scanSTR = sc.nextLine();
-						switch (scanSTR) {
-						case "ja":
-							if (spieler.getGeld() < hausPreis) {
-								
-							} else {
-								haus = 0;
-								hotel = true;
-								miete = 250;
-							}
-							
-							break;
-						case "nein":
-							System.out.println("Sie bauen jetzt kein Hotel.");
-							break;
-						default:
-							System.out.println("Das ist kein gültiger Befehl!");
-							break;
+    public void betrittFeld(Spielfigur spieler, ArrayList<Spielfigur> nichtspieler, Feld[] felder) {
+        System.out.println("Sie sind jetzt auf dem Feld[" + name + "].");
+        System.out.println();
+        Scanner sc = new Scanner(System.in);
+        int scanINT = 0;
+        String scanSTR = "";
+
+        if (wirdBesessen) {
+            if (spieler == besitzer) {
+                System.out.println("Ihnen gehört " + name + " bereits.");
+                System.out.println("Möchten Sie ein Haus bauen[ja] oder nicht[nein]? Preis = " + hausPreis + "€.");
+                scanSTR = sc.next();
+                switch (scanSTR) {
+                    case "ja":
+                        if (haus == 4) {
+                            System.out.println(
+                                    "Sie haben bereits 4 Häuser. Wollen sie ein Hotel bauen? [ja/nein]");
+                            scanSTR = sc.nextLine();
+                            switch (scanSTR) {
+                                case "ja":
+                                    if (spieler.getGeld() < hausPreis) {
+
+                                    } else {
+                                        haus = 0;
+                                        hotel = true;
+                                        miete = 250;
+                                    }
+
+                                    break;
+                                case "nein":
+                                    System.out.println("Sie bauen jetzt kein Hotel.");
+                                    break;
+                                default:
+                                    System.out.println("Das ist kein gültiger Befehl!");
+                                    break;
+                            }
+                        } else {
+
+                        }
+                        break;
+                    case "nein":
+                        break;
+                    default:
+                        System.out.println("Das ist kein gültiger Befehl!");
+                        break;
+                }
+            } else {
+            	int auszahlendeMiete = this.getMiete();
+            	int feldcounter = 0;
+                for (int i = 0; i < felder.length; i++) {
+                    if (felder[i] instanceof Strasse) {
+                        Strasse straße = (Strasse) felder[i];
+                        if (straße.getBesitzer() == spieler && straße.getSerie() == this.getSerie()) {
+							feldcounter++;
+                        }
+                    }
+                }
+                if (feldcounter > 1) {
+					if (this.getSerie() == 0 && this.getSerie() == 7) {
+						auszahlendeMiete = auszahlendeMiete * 2;
+					} else {
+						if (feldcounter == 3) {
+							auszahlendeMiete = auszahlendeMiete * 2;
 						}
-					} else {
-					
 					}
-					break;
-				case "nein":
-					break;
-				default:
-					System.out.println("Das ist kein gültiger Befehl!");
-					break;
 				}
-			} else {
-				switch (name) {
-				case "Badstrasse":
-					switch (haus) {
-					case 1:
-						
-						break;
-					case 2:
-						break;
-					case 3:
-						break;
-					case 4:
-						break;
-					default:
-						break;
-					}
-					break;
-				case "Turmstrasse":
-					break;
-				case "Chaussestrasse":
-					break;
-				case "Elisenstrasse":
-					break;
-				case "Poststrasse":
-					break;
-				case "Seestrasse":
-					break;
-				case "Hafenstrasse":
-					break;
-				case "Neue Strasse":
-					break;
-				case "Münchner Strasse":
-					break;
-				case "Wiener Strasse":
-					break;
-				case "Berliner Strasse":
-					break;
-				case "Theaterstrasse":
-					break;
-				case "Museumstrasse":
-					break;
-				case "Opernplatz":
-					break;
-				case "Lessingstrasse":
-					break;
-				case "Schillerstrasse":
-					break;
-				case "Goethestrasse":
-					break;
-				case "Rathausplatz":
-					break;
-				case "Hauptstrasse":
-					break;
-				case "Bahnhofstrasse":
-					break;
-				case "Parkstrasse":
-					break;
-				case "Schlossallee":
-					break;
+                if (this.getHaus() > 0) {
+                	auszahlendeMiete = auszahlendeMiete * this.getHaus();
 				}
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-			}
-		} else {
-			int i = 0;
-			while (i == 0) {
-				System.out.println("Möchten Sie [" + name + "] kaufen? Preis = " + kaufpreis + " €. [ja/nein]");
-				scanSTR = sc.nextLine();
-				switch (scanSTR) {
-				case "ja":
-					if(spieler.getGeld() < kaufpreis) {
-						System.out.println("Sie haben nicht genug Geld, um diese Strasse zu kaufen!");
-						i = 1; //Schleife ist vorbei
-						break;
-					} else {
-						spieler.setGeld(spieler.getGeld() - kaufpreis);
-						wirdBesessen = true;
-						besitzer = spieler;
-						System.out.println("Sie haben [" + name + "] gekauft!");
-						i = 1; //Schleife ist vorbei
-					}
-					break;
-				case "nein":
-					
-					break;
-				default:
-					System.out.println("Das ist kein gültiger Befehl. Nochmal!");
-					break;
+				if (this.isHotel()) {
+					auszahlendeMiete = auszahlendeMiete * 5;
 				}
-			}
-		}
-		
-	}
+				System.out.println("Sie zahlen " + auszahlendeMiete + "€ Miete.");
+            }
+        } else {
+            int i = 0;
+            while (i == 0) {
+                System.out.println("Möchten Sie [" + name + "] kaufen? Preis = " + kaufpreis + " €. [ja/nein]");
+                scanSTR = sc.nextLine();
+                switch (scanSTR) {
+                    case "ja":
+                        if (spieler.getGeld() < kaufpreis) {
+                            System.out.println("Sie haben nicht genug Geld, um diese Strasse zu kaufen!");
+                            i = 1; //Schleife ist vorbei
+                            break;
+                        } else {
+                            spieler.setGeld(spieler.getGeld() - kaufpreis);
+                            wirdBesessen = true;
+                            besitzer = spieler;
+                            System.out.println("Sie haben [" + name + "] gekauft!");
+                            i = 1; //Schleife ist vorbei
+                        }
+                        break;
+                    case "nein":
 
-	
-	public int getHaus() {
-		return haus;
-	}
+                        break;
+                    default:
+                        System.out.println("Das ist kein gültiger Befehl. Nochmal!");
+                        break;
+                }
+            }
+        }
 
-	public void setHaus(int haus) {
-		this.haus = haus;
-	}
+    }
 
-	public boolean isHotel() {
-		return hotel;
-	}
+    public int getSerie() {
+        return serie;
+    }
 
-	public void setHotel(boolean hotel) {
-		this.hotel = hotel;
-	}
+    public void setSerie(int serie) {
+        this.serie = serie;
+    }
 
-	public Spielfigur getBesitzer() {
-		return besitzer;
-	}
+    public int getStrasse() {
+        return strasse;
+    }
 
-	public void setBesitzer(Spielfigur besitzer) {
-		this.besitzer = besitzer;
-	}
+    public void setStrasse(int strasse) {
+        this.strasse = strasse;
+    }
 
-	public int getMiete() {
-		return miete;
-	}
+    public int getHaus() {
+        return haus;
+    }
 
-	public void setMiete(int miete) {
-		this.miete = miete;
-	}
+    public void setHaus(int haus) {
+        this.haus = haus;
+    }
 
-	public boolean isHypothek() {
-		return hypothek;
-	}
+    public boolean isHotel() {
+        return hotel;
+    }
 
-	public void setHypothek(boolean hypothek) {
-		this.hypothek = hypothek;
-	}
+    public void setHotel(boolean hotel) {
+        this.hotel = hotel;
+    }
 
-	public String getName() {
-		return name;
-	}
+    public Spielfigur getBesitzer() {
+        return besitzer;
+    }
 
-	public void setName(String name) {
-		this.name = name;
-	}
+    public void setBesitzer(Spielfigur besitzer) {
+        this.besitzer = besitzer;
+    }
 
-	public boolean isWirdBesessen() {
-		return wirdBesessen;
-	}
+    public int getMiete() {
+        return miete;
+    }
 
-	public void setWirdBesessen(boolean wirdBesessen) {
-		this.wirdBesessen = wirdBesessen;
-	}
+    public void setMiete(int miete) {
+        this.miete = miete;
+    }
 
-	public String getFarbe() {
-		return farbe;
-	}
+    public boolean isHypothek() {
+        return hypothek;
+    }
 
-	public void setFarbe(String farbe) {
-		this.farbe = farbe;
-	}
+    public void setHypothek(boolean hypothek) {
+        this.hypothek = hypothek;
+    }
 
-	public int getKaufpreis() {
-		return kaufpreis;
-	}
+    public String getName() {
+        return name;
+    }
 
-	public void setKaufpreis(int kaufpreis) {
-		this.kaufpreis = kaufpreis;
-	}
+    public void setName(String name) {
+        this.name = name;
+    }
 
-	public int getHypothekenwert() {
-		return hypothekenwert;
-	}
+    public boolean isWirdBesessen() {
+        return wirdBesessen;
+    }
 
-	public void setHypothekenwert(int hypothekenwert) {
-		this.hypothekenwert = hypothekenwert;
-	}
+    public void setWirdBesessen(boolean wirdBesessen) {
+        this.wirdBesessen = wirdBesessen;
+    }
 
-	public int getHausPreis() {
-		return hausPreis;
-	}
+    public String getFarbe() {
+        return farbe;
+    }
 
-	public void setHausPreis(int hausPreis) {
-		this.hausPreis = hausPreis;
-	}
+    public void setFarbe(String farbe) {
+        this.farbe = farbe;
+    }
+
+    public int getKaufpreis() {
+        return kaufpreis;
+    }
+
+    public void setKaufpreis(int kaufpreis) {
+        this.kaufpreis = kaufpreis;
+    }
+
+    public int getHypothekenwert() {
+        return hypothekenwert;
+    }
+
+    public void setHypothekenwert(int hypothekenwert) {
+        this.hypothekenwert = hypothekenwert;
+    }
+
+    public int getHausPreis() {
+        return hausPreis;
+    }
+
+    public void setHausPreis(int hausPreis) {
+        this.hausPreis = hausPreis;
+    }
 
 }
