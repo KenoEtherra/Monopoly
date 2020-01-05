@@ -50,7 +50,7 @@ public class Spielfeld extends Main {
     	Stadtwerke elekwerk     = new Stadtwerke(0,"Elektrizitätswerk");
     	Stadtwerke wasswerk     = new Stadtwerke(1,"Wasserwerk");
     	
-    	Gefaengnis gefängnis     = new Gefaengnis();
+    	Gefaengnis gefängnis    = new Gefaengnis();
     	
     	Polizist polizist       = new Polizist();
     	
