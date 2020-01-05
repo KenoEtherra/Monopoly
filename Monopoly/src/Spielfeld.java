@@ -124,7 +124,27 @@ public class Spielfeld extends Main {
         Spielfigur spieler3 = alleSpieler.get(2);
         Spielfigur spieler4 = alleSpieler.get(3);
         while (true) {
+            boolean gewinner = false;
             for (int i = 1; i <= anzahlSpieler; i++) {
+
+                if (spieler2.isBroken()  && spieler3.isBroken()  && spieler4.isBroken()) {
+                    System.out.println(spieler1.getName() + " hat gewonnen");
+                    gewinner = true;
+                    break;
+                }else if (spieler1.isBroken() && spieler3.isBroken()  && spieler4.isBroken()) {
+                    System.out.println(spieler2.getName() + " hat gewonnen");
+                    gewinner = true;
+                    break;
+                }else if (spieler1.isBroken() && spieler2.isBroken()  && spieler4.isBroken()) {
+                    System.out.println(spieler3.getName() + " hat gewonnen");
+                    gewinner = true;
+                    break;
+                }else if (spieler1.isBroken() && spieler2.isBroken()  && spieler3.isBroken()) {
+                    System.out.println(spieler4.getName() + " hat gewonnen");
+                    gewinner = true;
+                    break;
+                }
+
                 switch (i) {
                     case 1:
                         if (!spieler1.isBroken()) {
@@ -148,21 +168,7 @@ public class Spielfeld extends Main {
                         break;
                 }
             }
-            if (spieler1.isBroken()) {
-                alleSpieler.remove(spieler1);
-            }
-            if (spieler2.isBroken()) {
-                alleSpieler.remove(spieler2);
-            }
-            if (spieler3.isBroken()) {
-                alleSpieler.remove(spieler3);
-            }
-            if (spieler4.isBroken()) {
-                alleSpieler.remove(spieler4);
-            }
-            if (alleSpieler.size() == 1) {
-                System.out.println(alleSpieler.get(0).getName() + " hat gewonnen!!! ");
-                System.out.println("Das Spiel ist vorbei!");
+            if (gewinner) {
                 break;
             }
         }
@@ -225,6 +231,7 @@ public class Spielfeld extends Main {
 
             if (spieler.getGeld() <= 0) {
                 spieler.setBroken(true);
+                alleSpieler.remove(spieler);
                 System.out.println(spieler.getName() + "ist ausgeschieden!");
             }
 
