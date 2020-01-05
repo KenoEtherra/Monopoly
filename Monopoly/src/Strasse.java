@@ -216,7 +216,7 @@ public class Strasse extends Feld {
                         }
                         break;
                     case "nein":
-
+                    	i = 1;
                         break;
                     default:
                         System.out.println("Das ist kein gültiger Befehl. Nochmal!");
