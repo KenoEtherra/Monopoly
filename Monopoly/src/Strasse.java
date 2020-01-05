@@ -160,7 +160,75 @@ public class Strasse extends Feld {
 					break;
 				}
 			} else {
-				// Miete
+				switch (name) {
+				case "Badstrasse":
+					switch (haus) {
+					case 1:
+						
+						break;
+					case 2:
+						break;
+					case 3:
+						break;
+					case 4:
+						break;
+					default:
+						break;
+					}
+					break;
+				case "Turmstrasse":
+					break;
+				case "Chaussestrasse":
+					break;
+				case "Elisenstrasse":
+					break;
+				case "Poststrasse":
+					break;
+				case "Seestrasse":
+					break;
+				case "Hafenstrasse":
+					break;
+				case "Neue Strasse":
+					break;
+				case "Münchner Strasse":
+					break;
+				case "Wiener Strasse":
+					break;
+				case "Berliner Strasse":
+					break;
+				case "Theaterstrasse":
+					break;
+				case "Museumstrasse":
+					break;
+				case "Opernplatz":
+					break;
+				case "Lessingstrasse":
+					break;
+				case "Schillerstrasse":
+					break;
+				case "Goethestrasse":
+					break;
+				case "Rathausplatz":
+					break;
+				case "Hauptstrasse":
+					break;
+				case "Bahnhofstrasse":
+					break;
+				case "Parkstrasse":
+					break;
+				case "Schlossallee":
+					break;
+				}
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
 			}
 		} else {
 			int i = 0;
@@ -193,11 +261,7 @@ public class Strasse extends Feld {
 		
 	}
 
-	public int mieteKalkulieren() {
-
-		return 2;
-	}
-
+	
 	public int getHaus() {
 		return haus;
 	}
