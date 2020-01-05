@@ -54,12 +54,15 @@ public class Bahnhof extends Feld {
 	 * @param felder:Feld[]
 	 */
 	public void betrittFeld(Spielfigur spieler, ArrayList<Spielfigur> nichtspieler, Feld[] felder) {
+		System.out.println("Sie sind jetzt auf dem Feld [" + name + "].");
 		Scanner sc = new Scanner(System.in);
-		int scan = 0;
+		int scanINT = 0;
+		String scanSTR = "";
 
 		if (wirdBesessen) {
 			if (besitzer == spieler) {
 				// Kann nichts machen oder?
+				
 			} else {
 				// Miete
 				for (int i = 5; i < 36; i += 10) {
@@ -67,10 +70,10 @@ public class Bahnhof extends Feld {
 				}
 			}
 		} else {
-			System.out.println("Möchten Sie den " + name + " kaufen[1] oder nicht kaufen[2]?");
-			scan = sc.nextInt();
-			switch (scan) {
-			case 1:
+			System.out.println("Möchten Sie den " + name + " kaufen[ja] oder nicht kaufen[nein]?");
+			scanSTR = sc.next();
+			switch (scanSTR) {
+			case "ja":
 				if (spieler.getGeld() > kaufpreis) {
 					spieler.setGeld(spieler.getGeld() - kaufpreis);
 					besitzer = spieler;
@@ -80,7 +83,7 @@ public class Bahnhof extends Feld {
 					System.out.println("Sie haben nicht genug Geld, um den " + name + " zu kaufen.");
 				}
 				break;
-			case 2:
+			case "nein":
 				System.out.println("Sie kaufen den " + name + " nicht.");
 				break;
 			}

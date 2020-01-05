@@ -23,21 +23,41 @@ public class Stadtwerke extends Feld {
 	}
 
 	public void betrittFeld(Spielfigur spieler, ArrayList<Spielfigur> nichtspieler, Feld[] felder) {
+		System.out.println("Sie sind jetzt auf dem Feld [" + name + "].");
 		Scanner sc = new Scanner(System.in);
-		int scan = 0;
-		
+		int scanINT = 0;
+		String scanSTR = "";
+
 		if (wirdBesessen) {
 			if (besitzer == spieler) {
 				// Kann nichts machen oder?
+				System.out.println("Ihnen gehört das" + name + " schon.");
 			} else {
-				// Miete
-				// Brauche den Würfelwert dafür.
+				int wuerfelWert = spieler.wuerfeln();
+				System.out.println("Sie haben nochmal gewürfelt! Wert: " + wuerfelWert);
+				int miete = 0;
+				switch (werkNummer) {
+				case 0:
+					miete = wuerfelWert * 4;
+					System.out.println("Sie zahlen " + miete + "€ Miete");
+					spieler.setGeld(spieler.getGeld() - miete);
+					break;
+				case 1:
+					
+					miete = wuerfelWert * 10;
+					System.out.println("Sie zahlen " + miete + "€ Miete");
+					spieler.setGeld(spieler.getGeld() - miete);
+					break;
+				default:
+					break;
+				}
+
 			}
 		} else {
-			System.out.println("Möchten Sie das " + name + " kaufen[1] oder nicht kaufen[2]?");
-			scan = sc.nextInt();
-			switch (scan) {
-			case 1:
+			System.out.println("Möchten Sie das " + name + " kaufen[ja] oder nicht kaufen[nein]?");
+			scanSTR = sc.next();
+			switch (scanSTR) {
+			case "ja":
 				if (spieler.getGeld() > kaufpreis) {
 					besitzer = spieler;
 					wirdBesessen = true;
@@ -47,14 +67,14 @@ public class Stadtwerke extends Feld {
 					System.out.println("Sie haben nicht genug Geld, um das " + name + " zu kaufen.");
 				}
 				break;
-			case 2:
+			case "nein":
 				System.out.println("Sie kaufen das " + name + " nicht.");
 				break;
 			}
 		}
-		
+
 	}
-	
+
 	public Spielfigur getBesitzer() {
 		return besitzer;
 	}

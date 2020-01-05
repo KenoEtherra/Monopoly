@@ -114,16 +114,18 @@ public class Strasse extends Feld {
 	}
 
 	public void betrittFeld(Spielfigur spieler, ArrayList<Spielfigur> nichtspieler, Feld[] felder) {
+		System.out.println("Sie sind jetzt auf dem Feld[" + name + "].");
+		System.out.println();
 		Scanner sc = new Scanner(System.in);
 		int scanINT = 0;
 		String scanSTR = "";
 		
 		if (wirdBesessen) {
 			if (spieler == besitzer) {
-				System.out.println("Möchten Sie ein Haus/Hotel bauen[1] oder nichts tun[2]?");
-				scanINT = sc.nextInt();
-				switch (scanINT) {
-				case 1:
+				System.out.println("Möchten Sie ein Haus/Hotel bauen[ja] oder nicht[ja]?");
+				scanSTR = sc.next();
+				switch (scanSTR) {
+				case "ja":
 					if (haus == 4) {
 						System.out.println(
 								"Sie haben bereits 4 Häuser. Sind Sie sicher, dass sie ein Hotel bauen wollen? [ja/nein]");
@@ -148,7 +150,7 @@ public class Strasse extends Feld {
 					
 					}
 					break;
-				case 2:
+				case "nein":
 					break;
 				default:
 					System.out.println("Das ist kein gültiger Befehl!");
