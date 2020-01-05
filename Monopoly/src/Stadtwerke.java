@@ -43,7 +43,6 @@ public class Stadtwerke extends Feld {
 					spieler.setGeld(spieler.getGeld() - miete);
 					break;
 				case 1:
-					
 					miete = wuerfelWert * 10;
 					System.out.println("Sie zahlen " + miete + "€ Miete");
 					spieler.setGeld(spieler.getGeld() - miete);
